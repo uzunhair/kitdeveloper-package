@@ -1,0 +1,15 @@
+.btn{
+	&:hover {
+		cursor:pointer;
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	.container {
+		width: 100%;
+	}
+}
+
+.bhl {
+	color: #000;
+}
