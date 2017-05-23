@@ -1,17 +1,15 @@
 "use strict";
 
 var gulp = require('gulp'),
-    postcss = require('gulp-postcss'),
     cssnano = require('gulp-cssnano'),
     pxtorem = require('gulp-pxtorem'),
-    precss = require('precss'),
     autoprefixer = require('gulp-autoprefixer'),
     mqpacker = require('css-mqpacker'),
-    //b64i = require('postcss-b64i'),
     sass = require('gulp-sass'),
     sassUnicode = require('gulp-sass-unicode'),  // Не допускает ошибок при наличии обратного слеша "\fff"
     sourcemaps = require('gulp-sourcemaps'),
     rigger = require('gulp-rigger'), // Собирает html файлы
+    uglify = require('gulp-uglify'),
     del = require('del'), // Удаление файлов
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
@@ -68,16 +66,15 @@ var path = {
 };
 
 gulp.task('browser-sync', ['style.min:build'], function() {
-    // browserSync.init({
-    //     proxy: 'gulp.default',
-    //     notify:false
-    // });
-
     browserSync.init({
-        server: {
-            baseDir: "./dist/"
-        }
+        proxy: 'gulp.default'
     });
+
+    // browserSync.init({
+    //     server: {
+    //         baseDir: "./dist/"
+    //     }
+    // });
 
 });
 
@@ -97,6 +94,7 @@ gulp.task('php:build', function () {
 gulp.task('js:build', function () {
     gulp.src(path.src.js) //Найдем наш main файл
         .pipe(changed(path.build.js))
+        .pipe(uglify())
         // .pipe(plumber())
         // .pipe(rigger())
         // .pipe(sourcemaps.init()) //Инициализируем sourcemap
