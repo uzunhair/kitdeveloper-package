@@ -34,7 +34,8 @@ var path = {
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         php: 'src/*.php',
         js: 'src/js/**/*.js',//В стилях и скриптах нам понадобятся только main файлы
-        style: 'src/sass/**/*.scss',
+        styleTheme: 'src/sass/theme.scss',
+        styleVendors: 'src/sass/system.scss',
         img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'src/fonts/**/*.*'
     },
@@ -42,7 +43,8 @@ var path = {
         html: 'src/**/*.html',
         php: 'src/**/*.php',
         js: 'src/js/**/*.js',
-        style: 'src/sass/**/*.scss',
+        styleTheme: ['src/sass/theme/**/*.scss', 'src/sass/config/*.scss'],
+        styleVendors: ['src/sass/vendors/**/*.scss', 'src/sass/config/*.scss'],
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
@@ -65,9 +67,12 @@ var path = {
     }
 };
 
-gulp.task('browser-sync', ['style.min:build'], function() {
+gulp.task('browser-sync', ['watch'], function () {
     browserSync.init({
-        proxy: 'gulp.default'
+        proxy: 'gulp.default',
+        logConnections: true,
+        notify: false,
+        reloadDebounce: 200
     });
 
     // browserSync.init({
@@ -102,8 +107,8 @@ gulp.task('js:build', function () {
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
 });
 
-gulp.task('style:build', function () {
-    gulp.src(path.src.style) //Выберем наш system.scss
+gulp.task('styleTheme:build', function () {
+    gulp.src(path.src.styleTheme) //Выберем наш system.scss
         .pipe(plumber())
         .pipe(sourcemaps.init({largeFile: true})) //То же самое что и с js
         .pipe(sass().on('error', sass.logError)) //Скомпилируем
@@ -117,8 +122,42 @@ gulp.task('style:build', function () {
         .pipe(gulp.dest(path.build.style)) //И в build
 });
 
-gulp.task('style.min:build', function () {
-    gulp.src(path.src.style) //Выберем наш system.scss
+gulp.task('styleVendors:build', function () {
+    gulp.src(path.src.styleVendors) //Выберем наш system.scss
+        .pipe(plumber())
+        .pipe(sourcemaps.init({largeFile: true})) //То же самое что и с js
+        .pipe(sass().on('error', sass.logError)) //Скомпилируем
+        .pipe(sassUnicode())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(pxtorem())
+        .pipe(sourcemaps.write(''))
+        .pipe(gulp.dest(path.build.style)) //И в build
+});
+
+gulp.task('styleTheme.min:build', function () {
+    gulp.src(path.src.styleTheme) //Выберем наш system.scss
+        .pipe(plumber())
+        .pipe(sourcemaps.init()) //То же самое что и с js
+        .pipe(sass().on('error', sass.logError)) //Скомпилируем
+        .pipe(sassUnicode())
+        .pipe(cssnano({zindex: false})) //Сожмем
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(pxtorem())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(sourcemaps.write(''))
+        .pipe(duration('style.min:build time'))
+        .pipe(gulp.dest(path.build.style)) //И в build
+        .pipe(browserSync.stream())
+});
+
+gulp.task('styleVendors.min:build', function () {
+    gulp.src(path.src.styleVendors) //Выберем наш system.scss
         .pipe(plumber())
         .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass().on('error', sass.logError)) //Скомпилируем
@@ -164,8 +203,10 @@ gulp.task('build', [
     'html:build',
     'php:build',
     'js:build',
-    'style:build',
-    'style.min:build',
+    'styleTheme:build',
+    'styleTheme.min:build',
+    'styleVendors:build',
+    'styleVendors.min:build',
     'fonts:build',
     'img:build'
 ]);
@@ -173,8 +214,10 @@ gulp.task('build', [
 gulp.task('watch', function () {
     gulp.watch(path.watch.php, ['php:build']);
     gulp.watch(path.watch.html, ['html:build']);
-    gulp.watch(path.watch.style, ['style:build']);
-    gulp.watch(path.watch.style, ['style.min:build']);
+    gulp.watch(path.watch.styleTheme, ['styleTheme:build']);
+    gulp.watch(path.watch.styleVendors, ['styleVendors:build']);
+    gulp.watch(path.watch.styleTheme, ['styleTheme.min:build']);
+    gulp.watch(path.watch.styleVendors, ['styleVendors.min:build']);
     gulp.watch(path.watch.js, ['js:build']);
     gulp.watch(path.watch.img, ['img:build']);
     gulp.watch(path.watch.fonts, ['fonts:build']);
