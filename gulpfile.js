@@ -14,6 +14,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
     changed = require('gulp-changed'), // запускают таски только для изменившихся файлов
+    gulpif = require('gulp-if'),
+    mainBowerFiles = require('main-bower-files'),
     browserSync = require('browser-sync').create();
 
 var duration    = require('gulp-duration');
@@ -197,6 +199,21 @@ gulp.task('img:build', function () {
 gulp.task('fonts:build', function () {
     gulp.src(path.src.fonts) //Выберем файлы по нужному пути
         .pipe(gulp.dest(path.build.fonts)) //Выплюнем их в папку build
+});
+
+gulp.task('bowerSCSS:build', function() {
+    var    condition = '!**/_*.scss';
+
+    return gulp.src(mainBowerFiles('**/*.scss'), {base: './bower_components'})
+        .pipe(debug({title: 'bowerSCSS:build'}))
+        .pipe(gulpif(condition, rename({prefix: "_"})))
+        .pipe(rename(function (path) {
+            var pathTheme = path.dirname;
+            pathTheme = pathTheme.replace("\\scss", "\\");
+            path.dirname = pathTheme;
+        }))
+        .pipe(debug({title: 'bowerSCSS:build'}))
+        .pipe(gulp.dest(path.bower.scssVendors))
 });
 
 gulp.task('build', [
