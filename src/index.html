@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <title>Title</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/system.css" rel="stylesheet">
-    <link href="/css/theme.css" rel="stylesheet">
+    <link href="css/system.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
 </head>
 <body>
-    //= template/header.html
+
+    @@include('./template/header.html')
 
     <section class="content">
         <div class="main">
@@ -23,15 +24,12 @@
                     <div class="article-title pt-5">
                         <h1 class="text-center bg-faded py-4">Helpers</h1>
                     </div>
-                    <div class="small-title">
-                    </div>
-                    <div class="desc">
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    //= template/footer.html
+
+    @@include('./template/footer.html')
+
 </body>
 </html>

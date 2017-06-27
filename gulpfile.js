@@ -16,6 +16,7 @@ var gulp = require('gulp'),
     changed = require('gulp-changed'), // запускают таски только для изменившихся файлов
     gulpif = require('gulp-if'),
     mainBowerFiles = require('main-bower-files'),
+    fileinclude = require('gulp-file-include'),
     browserSync = require('browser-sync').create();
 
 var duration    = require('gulp-duration');
@@ -70,25 +71,28 @@ var path = {
 };
 
 gulp.task('browser-sync', ['watch'], function () {
-    browserSync.init({
-        proxy: 'gulp.default',
-        logConnections: true,
-        notify: false,
-        reloadDebounce: 200
-    });
-
     // browserSync.init({
-    //     server: {
-    //         baseDir: "./dist/"
-    //     }
+    //     proxy: 'gulp.default',
+    //     logConnections: true,
+    //     notify: false,
+    //     reloadDebounce: 200
     // });
+
+    browserSync.init({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
 
 });
 
 gulp.task('html:build', function () {
     gulp.src(path.src.html) //Выберем файлы по нужному пути
         .pipe(plumber())
-        .pipe(rigger()) //Прогоним через rigger
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
         .pipe(gulp.dest(path.build.html)) //Выплюнем их в папку build
 });
 
