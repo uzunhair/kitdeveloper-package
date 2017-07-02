@@ -17,6 +17,7 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     mainBowerFiles = require('main-bower-files'),
     fileinclude = require('gulp-file-include'),
+    concat = require('gulp-concat'),
     browserSync = require('browser-sync').create();
 
 var duration    = require('gulp-duration');
@@ -36,7 +37,21 @@ var path = {
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         php: 'src/*.php',
-        js: 'src/js/**/*.js',//В стилях и скриптах нам понадобятся только main файлы
+        jsStatic: 'src/js/static/*.js', // статичные js файлы
+        jsConcat: [                     // объединяемые файлы
+            'src/js/tether/tether.js',
+            'src/js/bootstrap/util.js',
+            'src/js/bootstrap/alert.js',
+            'src/js/bootstrap/button.js',
+            'src/js/bootstrap/carousel.js',
+            'src/js/bootstrap/collapse.js',
+            'src/js/bootstrap/dropdown.js',
+            'src/js/bootstrap/modal.js',
+            'src/js/bootstrap/scrollspy.js',
+            'src/js/bootstrap/tab.js',
+            'src/js/bootstrap/tooltip.js',
+            'src/js/bootstrap/popover.js',
+            'src/js/setting.js'],
         styleTheme: 'src/sass/theme.scss',
         styleVendors: 'src/sass/system.scss',
         img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
@@ -103,14 +118,15 @@ gulp.task('php:build', function () {
 });
 
 gulp.task('js:build', function () {
-    gulp.src(path.src.js) //Найдем наш main файл
-        .pipe(changed(path.build.js))
+    gulp.src(path.src.jsStatic)
+        .pipe(plumber())
+        .pipe(gulp.dest(path.build.js));
+
+    gulp.src(path.src.jsConcat)
         .pipe(uglify())
-        // .pipe(plumber())
-        // .pipe(rigger())
-        // .pipe(sourcemaps.init()) //Инициализируем sourcemap
-        // .pipe(sourcemaps.write('')) //Пропишем карты
-        .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
+        .pipe(plumber())
+        .pipe(concat('theme.min.js'))
+        .pipe(gulp.dest(path.build.js));
 });
 
 gulp.task('styleTheme:build', function () {
