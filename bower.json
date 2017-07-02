@@ -1,0 +1,23 @@
+{
+  "name": "Gulp.Kitdeveloper",
+  "description": "Gulp.Default",
+  "main": "index.js",
+  "authors": [
+    "Atid"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "freelance"
+  ],
+  "homepage": "kitdeveloper.ru",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}
