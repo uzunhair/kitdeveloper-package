@@ -75,12 +75,6 @@ var path = {
         fonts: 'dist/fonts/**/*.*'
     },
     clean: {
-        html: 'dist/**/*.html',
-        php: 'dist/**/*.php',
-        js: 'dist/js/**/*.js',
-        style: 'dist/css/**/*.*',
-        img: 'dist/img/**/*.*',
-        fonts: 'dist/fonts/**/*.*',
         all: './dist'
     }
 };
@@ -339,11 +333,6 @@ gulp.task('zip', function() {
 
 gulp.task('clean', function () {
     return del([
-        path.clean.html,
-        path.clean.js,
-        path.clean.style,
-        path.clean.img,
-        path.clean.fonts,
         path.clean.all
     ]);
 });
