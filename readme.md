@@ -18,5 +18,11 @@ https://www.npmjs.com/package/npm-check-updates
 Обновление пакетов `ncu -u` `npm update`
 
 
+## Modification
 
+Сделать кнопки 
+1 прямым углом.
+2 с небольшим углом
+3 округлыми
+4 круглые
 
