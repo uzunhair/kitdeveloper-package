@@ -37,20 +37,20 @@ var path = {
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         php: 'src/*.php',
-        jsStatic: 'src/js/static/*.js', // статичные js файлы
+        jsStatic: ['src/js/static/*.js'], // статичные js файлы
         jsConcat: [                     // объединяемые файлы
-            'src/js/tether/tether.js',
-            'src/js/bootstrap/util.js',
-            'src/js/bootstrap/alert.js',
-            'src/js/bootstrap/button.js',
-            'src/js/bootstrap/carousel.js',
-            'src/js/bootstrap/collapse.js',
-            'src/js/bootstrap/dropdown.js',
-            'src/js/bootstrap/modal.js',
-            'src/js/bootstrap/scrollspy.js',
-            'src/js/bootstrap/tab.js',
-            'src/js/bootstrap/tooltip.js',
-            'src/js/bootstrap/popover.js',
+            'bower_components/popper.js/dist/umd/popper.min.js',
+            'bower_components/bootstrap/js/dist/util.js',
+            'bower_components/bootstrap/js/dist/alert.js',
+            'bower_components/bootstrap/js/dist/button.js',
+            'bower_components/bootstrap/js/dist/carousel.js',
+            'bower_components/bootstrap/js/dist/collapse.js',
+            'bower_components/bootstrap/js/dist/dropdown.js',
+            'bower_components/bootstrap/js/dist/modal.js',
+            'bower_components/bootstrap/js/dist/scrollspy.js',
+            'bower_components/bootstrap/js/dist/tab.js',
+            'bower_components/bootstrap/js/dist/tooltip.js',
+            'bower_components/bootstrap/js/dist/popover.js',
             'src/js/setting.js'],
         styleTheme: 'src/sass/theme.scss',
         styleVendors: 'src/sass/system.scss',

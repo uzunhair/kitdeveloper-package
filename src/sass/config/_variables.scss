@@ -2,50 +2,9 @@
 // Set the number of columns and specify the width of the gutters.
 $enable-flex: true;
 $grid-columns: 12 !default;
-$grid-gutter-width-base: 2.1429rem !default;
+$grid-gutter-width-base: 2rem !default;
 
 // Font awesome init
-$fa-font-path: '../fonts' !default;
-$fa-font-size-base: 14px !default;
+//$fa-font-path: '../fonts' !default;
+//$fa-font-size-base: 14px !default;
 
-$font-size-root: 14px !default;
-
-$one-pixel-to-rem:  0.07143rem !default;
-
-$font-size-base:         1rem !default;
-$font-size-lg:           1.2857rem !default;
-$font-size-sm:           .8571rem !default;
-$font-size-xs:           .7143rem !default;
-
-// Colors
-//
-// Grayscale and brand colors for use across Bootstrap.
-
-// Start with assigning color names to specific hex values.
-$white:  #fff !default;
-$black:  #000 !default;
-$red:    #f3003f !default;
-$orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
-$green:  #5cb85c !default;
-$blue:   #0772ba !default;
-$teal:   #5bc0de !default;
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
-
-// Create grayscale
-$gray-dark:                 #252f3d !default;
-$gray:                      #464a4c !default;
-$gray-light:                #636c72 !default;
-$gray-lighter:              #eceeef !default;
-$gray-lightest:             #f7f7f9 !default;
-
-$body-bg:       $gray-lightest !default;
-
-// Components
-//
-// Define common padding and border radius sizes and more.
-
-$border-radius:          .0rem !default;
-$border-radius-lg:       .0rem !default;
-$border-radius-sm:       .0rem !default;
