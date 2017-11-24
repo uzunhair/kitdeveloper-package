@@ -37,7 +37,7 @@ var path = {
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         php: 'src/*.php',
-        jsStatic: ['src/js/static/*.js'], // статичные js файлы
+        jsSeparate: ['src/js/separate/*.js', 'bower_components/holderjs/holder.min.js'], // статичные js файлы
         jsConcat: [                     // объединяемые файлы
             'bower_components/popper.js/dist/umd/popper.min.js',
             'bower_components/bootstrap/js/dist/util.js',
@@ -51,6 +51,7 @@ var path = {
             'bower_components/bootstrap/js/dist/tab.js',
             'bower_components/bootstrap/js/dist/tooltip.js',
             'bower_components/bootstrap/js/dist/popover.js',
+            'src/js/concat/*.js',
             'src/js/setting.js'],
         styleTheme: 'src/sass/theme.scss',
         styleVendors: 'src/sass/system.scss',
@@ -337,5 +338,9 @@ gulp.task('clean', function () {
     ]);
 });
 
+gulp.task('icms:build', function () {
+    gulp.src('src/_icms/src/**/*.bak') //Выберем файлы по нужному пути
+        .pipe(gulp.dest('src/_icms/dist/')) //Выплюнем их в папку build
+});
 
 gulp.task('default', ['browser-sync', 'build', 'watch']);
