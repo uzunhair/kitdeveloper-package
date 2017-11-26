@@ -1,0 +1,17 @@
+<section class="py-3" id="@@id">
+    <h2 class="section--title">@@title</h2>
+    <div class="py-4">
+        @@include('./@@file')
+
+    @@if (precode === "true") {
+        <div class="card">
+            <a class="card-header text-dark" data-toggle="collapse" href="#collapse@@id" aria-expanded="false" aria-controls="collapse@@id">
+                 @@title pre cod
+            </a>
+             <div class="collapse" id="collapse@@id">
+                 <pre class="line-numbers rounded-0"><code class="language-markup">@@include('./precode/@@file')</code></pre>
+             </div>
+         </div>
+     </div>
+    }
+</section>

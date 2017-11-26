@@ -38,19 +38,19 @@ var path = {
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         php: 'src/*.php',
         jsSeparate: ['src/js/separate/*.js', 'bower_components/holderjs/holder.min.js'], // статичные js файлы
-        jsConcat: [                     // объединяемые файлы
-            'bower_components/popper.js/dist/umd/popper.min.js',
-            'bower_components/bootstrap/js/dist/util.js',
-            'bower_components/bootstrap/js/dist/alert.js',
-            'bower_components/bootstrap/js/dist/button.js',
-            'bower_components/bootstrap/js/dist/carousel.js',
-            'bower_components/bootstrap/js/dist/collapse.js',
-            'bower_components/bootstrap/js/dist/dropdown.js',
-            'bower_components/bootstrap/js/dist/modal.js',
-            'bower_components/bootstrap/js/dist/scrollspy.js',
-            'bower_components/bootstrap/js/dist/tab.js',
-            'bower_components/bootstrap/js/dist/tooltip.js',
-            'bower_components/bootstrap/js/dist/popover.js',
+        jsConcat: [
+            'node_modules/popper.js/dist/umd/popper.min.js',
+            'node_modules/bootstrap/js/dist/util.js',
+            'node_modules/bootstrap/js/dist/alert.js',
+            'node_modules/bootstrap/js/dist/button.js',
+            'node_modules/bootstrap/js/dist/carousel.js',
+            'node_modules/bootstrap/js/dist/collapse.js',
+            'node_modules/bootstrap/js/dist/dropdown.js',
+            'node_modules/bootstrap/js/dist/modal.js',
+            'node_modules/bootstrap/js/dist/scrollspy.js',
+            'node_modules/bootstrap/js/dist/tab.js',
+            'node_modules/bootstrap/js/dist/tooltip.js',
+            'node_modules/bootstrap/js/dist/popover.js',
             'src/js/concat/*.js',
             'src/js/setting.js'],
         styleTheme: 'src/sass/theme.scss',
@@ -113,7 +113,7 @@ gulp.task('php:build', function () {
 });
 
 gulp.task('js:build', function () {
-    gulp.src(path.src.jsStatic)
+    gulp.src(path.src.jsSeparate)
         .pipe(plumber())
         .pipe(gulp.dest(path.build.js));
 
@@ -231,6 +231,96 @@ gulp.task('bowerSCSS:build', function() {
         .pipe(gulp.dest(path.bower.scssVendors))
 });
 
+// Bootstrap UI
+
+var bootstrapPath = {
+    build: { //Тут мы укажем куда складывать готовые после сборки файлы
+        html: 'dist/bootstrap_ui',
+        js: 'dist/bootstrap_ui/js/',
+        css: 'dist/bootstrap_ui/css/'
+    },
+    src: { //Пути откуда брать исходники
+        html: 'src/bootstrap_ui/*.html',
+        js: [
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/bootstrap/dist/js/bootstrap.js',
+            'node_modules/popper.js/dist/umd/popper.js',
+            'node_modules/theia-sticky-sidebar/dist/theia-sticky-sidebar.js',
+            'node_modules/holderjs/holder.js',
+            'src/bootstrap_ui/js/prism-min.js',
+            'src/bootstrap_ui/js/script.js'
+        ],
+        css: 'src/bootstrap_ui/css/*.css'
+    },
+    watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
+        html: 'src/bootstrap_ui/**/*.html',
+        js: 'src/bootstrap_ui/js/**/*.js',
+        css: 'src/bootstrap_ui/css/**/*.*'
+    },
+    browser: {
+        html: 'dist/bootstrap_ui/**/*.html',
+        js: 'dist/bootstrap_ui/js/**/*.js',
+        css: 'dist/bootstrap_ui/css/*.css'
+    }
+};
+
+gulp.task('bsHtml:build', function () {
+    gulp.src(bootstrapPath.src.html)
+        .pipe(plumber())
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest(bootstrapPath.build.html))
+});
+
+gulp.task('bsJs:build', function () {
+    gulp.src(bootstrapPath.src.js)
+        .pipe(plumber())
+        .pipe(gulp.dest(bootstrapPath.build.js));
+});
+
+gulp.task('bsCss:build', function () {
+    gulp.src(bootstrapPath.src.css) //Выберем наш system.scss
+        .pipe(plumber())
+        .pipe(duration('style.min:build time'))
+        .pipe(gulp.dest(bootstrapPath.build.css)); //И в build
+});
+
+gulp.task('frep', function () {
+    var frep = require('gulp-frep');
+
+    var replacements = {
+        '<': '&lt;',
+        '>': '&gt;'
+    };
+
+    gulp.src('./src/bootstrap_ui/html/component/*.html')
+        .pipe(frep(replacements))
+        .pipe(gulp.dest('./src/bootstrap_ui/html/component/precode/'));
+});
+
+gulp.task('bsBuild', [
+    'bsHtml:build',
+    'bsJs:build',
+    'bsCss:build'
+]);
+
+gulp.task('bsWatch', function () {
+    gulp.watch(bootstrapPath.watch.html, ['bsHtml:build']);
+    gulp.watch(bootstrapPath.watch.js, ['bsJs:build']);
+    gulp.watch(bootstrapPath.watch.css, ['bsCss:build']);
+
+    // gulp.watch(bootstrapPath.browser.js).on("change", browserSync.reload);
+    // gulp.watch(bootstrapPath.browser.html).on('change', browserSync.reload);
+});
+
+gulp.task('bsDefault', ['bsBuild', 'bsWatch']);
+
+
+// END Bootstrap UI
+
+
 gulp.task('build', [
     'html:build',
     'php:build',
@@ -336,11 +426,6 @@ gulp.task('clean', function () {
     return del([
         path.clean.all
     ]);
-});
-
-gulp.task('icms:build', function () {
-    gulp.src('src/_icms/src/**/*.bak') //Выберем файлы по нужному пути
-        .pipe(gulp.dest('src/_icms/dist/')) //Выплюнем их в папку build
 });
 
 gulp.task('default', ['browser-sync', 'build', 'watch']);
