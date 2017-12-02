@@ -37,7 +37,7 @@ var path = {
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         php: 'src/*.php',
-        jsSeparate: ['src/js/separate/*.js', 'bower_components/holderjs/holder.min.js'], // статичные js файлы
+        jsSeparate: ['src/js/separate/*.js', 'node_modules/holderjs/holder.js'], // статичные js файлы
         jsConcat: [
             'node_modules/popper.js/dist/umd/popper.min.js',
             'node_modules/bootstrap/js/dist/util.js',
@@ -101,7 +101,9 @@ gulp.task('html:build', function () {
         .pipe(plumber())
         .pipe(fileinclude({
             prefix: '@@',
-            basepath: '@file'
+            basepath: '@file',
+            indent:true
+
         }))
         .pipe(gulp.dest(path.build.html)) //Выплюнем их в папку build
 });
@@ -346,7 +348,7 @@ gulp.task('watch', function () {
 
     gulp.watch(path.browser.js).on("change", browserSync.reload);
     gulp.watch(path.browser.html).on('change', browserSync.reload);
-    gulp.watch(path.browser.php).on('change', browserSync.reload);
+    gulp.watch(path.browser.style).on('change', browserSync.reload);
 });
 
 /** FTP Configuration **/
