@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    config = require('../config.js'),
+    config = require('./config.js'),
     plugin = require('gulp-load-plugins')();
 
 gulp.task('html:build', function () {

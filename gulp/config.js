@@ -2,13 +2,16 @@ module.exports = {
     path: {
         build: { //Тут мы укажем куда складывать готовые после сборки файлы
             html: 'dist/',
+            pug: 'dist/',
             js: 'dist/js/',
             style: 'dist/css/',
             img: 'dist/img/',
+            svg: 'src/img/svg/',
             fonts: 'dist/fonts/'
         },
         src: { //Пути откуда брать исходники
-            html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+            html: 'src/html/*.html',
+            pug: 'src/pug/*.pug',
             jsSeparate: ['src/js/separate/*.js', 'node_modules/holderjs/holder.js'], // статичные js файлы
             jsConcat: [
                 'node_modules/popper.js/dist/umd/popper.min.js',
@@ -23,30 +26,42 @@ module.exports = {
                 'node_modules/bootstrap/js/dist/tab.js',
                 'node_modules/bootstrap/js/dist/tooltip.js',
                 'node_modules/bootstrap/js/dist/popover.js',
+                'node_modules/owl.carousel/dist/owl.carousel.js',
+                'node_modules/jquery.dotdotdot/dist/jquery.dotdotdot.js',
                 'src/js/concat/*.js',
                 'src/js/setting.js'],
             styleTheme: 'src/sass/theme.scss',
             styleVendors: 'src/sass/system.scss',
-            img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+            styleTypografy: 'src/sass/typografy.scss',
+            img: 'src/img/**/*.+(jpg|jpeg|png)',
+            svg: 'src/img/svg-sprite/*.*',
             fonts: 'src/fonts/**/*.*'
         },
         watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
             html: 'src/**/*.html',
+            pug: 'src/pug/**/*.*',
             js: 'src/js/**/*.js',
-            styleTheme: ['src/sass/theme/**/*.scss', 'src/sass/config/*.scss'],
-            styleVendors: ['src/sass/vendors/**/*.scss', 'src/sass/config/*.scss'],
+            styleTheme: ['src/sass/theme.scss','src/sass/theme/**/*.scss', 'src/sass/config/*.scss'],
+            styleVendors: ['src/sass/system.scss', 'src/sass/vendors/**/*.scss', 'src/sass/config/*.scss'],
             img: 'src/img/**/*.*',
             fonts: 'src/fonts/**/*.*'
         },
         browser: {
             html: 'dist/**/*.html',
+            pug: 'dist/**/*.pug',
             js: 'dist/js/**/*.js',
             style: 'dist/css/**/*.*',
             img: 'dist/img/**/*.*',
             fonts: 'dist/fonts/**/*.*'
         },
         clean: {
-            all: './dist'
+            html: 'dist/*.html',
+            js: 'dist/js/',
+            style: 'dist/css/',
+            img: 'dist/img/',
+            svg: 'src/sass/sprite/_sprite.scss',
+            fonts: 'dist/fonts/'
+
         }
     }
 };

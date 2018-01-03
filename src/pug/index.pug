@@ -1,0 +1,19 @@
+extends layout/page
+
+block variables
+	- var title = 'Hello'
+	- var pageLink = 'index.html'
+	- var mainPage = 'home-page'
+
+block header
+
+block content
+	.container.pt-2
+		h1.bg-light.py-5.text-center hello
+
+		+breadcrumb('Страница', ['Категория'])
+
+		include mixin/pagination
+
+block footer
+

@@ -1,0 +1,28 @@
+doctype html
+
+include ../mixin/breadcrumb
+include ../mixin/svg
+
+block variables
+
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		meta(name="description" content="")
+		meta(name="author" content="")
+		link(rel="icon" href="favicon.ico")
+		title #{title}
+
+		// Bootstrap core CSS
+		link(href="css/system.css" rel="stylesheet")
+		link(href="css/theme.css" rel="stylesheet")
+
+	body(class=bodyClass)
+		include header
+
+		block content
+
+		include footer
+
+

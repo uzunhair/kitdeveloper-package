@@ -1,0 +1,12 @@
+//- +breadcrumb('Конечный пункт', ['Список пунктов'])
+
+mixin breadcrumb(active_item, items)
+	nav(aria-label="breadcrumb" role="navigation")
+		ol.breadcrumb
+			li.breadcrumb-item
+				a(href="#") Главная
+			-var items = items || ''
+			each item in items
+				li.breadcrumb-item
+					a(href="#")= item
+			li.breadcrumb-item.active(aria-current="page")=active_item

@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var config = require('../config.js');
+var config = require('./config.js');
 
 gulp.task('fonts:build', function () {
     gulp.src(config.path.src.fonts) //Выберем файлы по нужному пути
