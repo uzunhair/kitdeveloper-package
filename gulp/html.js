@@ -9,7 +9,6 @@ gulp.task('html:build', function () {
             prefix: '@@',
             basepath: '@file',
             indent: true
-
         }))
         .pipe(gulp.dest(config.path.build.html)) //Выплюнем их в папку build
 });

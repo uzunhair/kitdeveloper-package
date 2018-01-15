@@ -1,0 +1,45 @@
+﻿extends layout/page
+
+block variables
+	- var title = 'UI'
+	- var pageLink = 'index.html'
+	- var mainPage = 'home-page'
+
+block header
+
+block content
+	.main.py-5
+		.container
+			.row
+				.col-sm-3.hidden-sm-down.sidebar
+					.sidebar-inner
+						nav#navbar-example.site-nav
+							ul.nav.flex-column
+								include layout/loop-nav
+				.col-md-9.content
+					include component/alert
+					//- include component/badges
+					//- include component/borders
+					//- include component/breadcrumb
+					//- include component/button group
+					include component/buttons
+					//- include component/cards
+					//- include component/carousel
+					//- include component/collapse
+					include component/color
+					//- include component/dropdowns
+					//- include component/forms
+					//- include component/input group
+					//- include component/list group
+					//- include component/modal
+					//- include component/navbar
+					//- include component/navs
+					//- include component/pagination
+					//- include component/popovers
+					//- include component/progress
+					//- include component/tooltips
+					//- include component/typography
+
+
+
+block footer

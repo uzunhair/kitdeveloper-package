@@ -1,9 +1,8 @@
 doctype html
 
-include ../mixin/breadcrumb
-include ../mixin/svg
-
 block variables
+include ../config/config
+include ../mixin/buttons
 
 html(lang="ru-RU")
 	head
@@ -14,16 +13,17 @@ html(lang="ru-RU")
 		link(rel="icon" href="favicon.ico")
 		title #{title}
 
-		// Bootstrap core CSS
-		link(href="css/system.css" rel="stylesheet")
-		link(href="css/theme.css" rel="stylesheet")
-		block head
+		// CSS
+		link(rel="stylesheet" href="../css/system.css")
+		link(rel="stylesheet" href="css/prism.css")
+		link(rel="stylesheet" href="css/style.css")
 
-	body(class=bodyClass)
+	body(class=bodyClass, data-spy="scroll", data-target="#navbar-example", data-offset="10", style="position: relative;")
 		include header
 
 		block content
 
 		include footer
+
 
 

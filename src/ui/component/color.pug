@@ -1,0 +1,9 @@
+section.py-3(id= components.color.id)
+	+section_title(components.color.title)
+	.py-4
+		.row
+			each Color,ColorValue in theme_colors
+				div(class='col-3 p-3 mb-2 text-' + ColorValue)=ColorValue
+		.row
+			each Color,ColorValue in theme_colors
+				div(class='col-3 p-3 mb-2 text-white bg-' + ColorValue)=ColorValue

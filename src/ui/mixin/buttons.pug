@@ -1,0 +1,10 @@
+//- button(
+	btn_class 	- класс кнопки
+	btn_text	- текст кнопки
+	btn_type	- тип кнопки (link, button), не обязательнок заполнению
+	)
+mixin button(btn_class, btn_text, btn_type)
+	if btn_type == 'link'
+		a.btn(class= btn_class, href="#", role="button")= btn_text
+	else
+		button.btn(class= btn_class, type="button")= btn_text

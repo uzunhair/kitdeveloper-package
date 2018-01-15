@@ -2,7 +2,6 @@ var gulp = require('gulp'),
     config = require('./config.js'),
     browserSync = require('browser-sync').create();
 
-
 gulp.task('browser-sync', ['watch'], function () {
     browserSync.init({
         server: {

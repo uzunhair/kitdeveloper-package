@@ -1,0 +1,6 @@
+section.py-3(id= components.alert.id)
+	+section_title(components.alert.title)
+	.py-4
+		each alerColor,alerColorValue in theme_colors
+			div.alert(class='alert-' +alerColorValue, role="alert")
+				| This is a primary alert—check it out!

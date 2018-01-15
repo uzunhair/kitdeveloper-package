@@ -1,0 +1,23 @@
+section.py-3(id= components.buttons.id)
+	+section_title(components.buttons.title)
+	.py-4
+		h4 Default
+		.mb-3
+			each Color,ColorValue in theme_colors
+				+button('text-capitalize btn-' + ColorValue, ColorValue)
+
+		h4 Outline buttons
+		.mb-3
+			each Color,ColorValue in theme_colors
+				+button('text-capitalize btn-outline-' + ColorValue, ColorValue)
+
+		.card.mt-3
+			a.card-header.text-dark(data-toggle="collapse" href="#collapse" + components.buttons.id aria-expanded="false" aria-controls="collapse" + components.buttons.id)=components.buttons.id
+				|  pre code
+			.collapse.show(id="collapse" + components.buttons.id)
+				pre.line-numbers.rounded-0
+					code.language-html
+						each Color,ColorValue in theme_colors
+							='<button type="button" class="btn btn-' + ColorValue + '">' + ColorValue + '</button>'
+							|
+							|
