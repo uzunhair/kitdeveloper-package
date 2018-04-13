@@ -23,8 +23,5 @@ jQuery.noConflict()(function($) {
 		    var aTag = $(aid);
 		    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 		}
-
-        var Prism = require('prismjs');
-
 	});
 });

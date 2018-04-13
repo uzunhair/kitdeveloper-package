@@ -1,5 +1,5 @@
-section.py-3(id= components.buttons.id)
-	+section_title(components.buttons.title)
+section.py-3(id= layout.buttons.id)
+	+section_title(layout.buttons.title)
 	.py-4
 		h4 Default
 		.mb-3
@@ -12,9 +12,9 @@ section.py-3(id= components.buttons.id)
 				+button('text-capitalize btn-outline-' + ColorValue, ColorValue)
 
 		.card.mt-3
-			a.card-header.text-dark(data-toggle="collapse" href="#collapse" + components.buttons.id aria-expanded="false" aria-controls="collapse" + components.buttons.id)=components.buttons.id
+			a.card-header.text-dark(data-toggle="collapse" href="#collapse" + layout.buttons.id aria-expanded="false" aria-controls="collapse" + layout.buttons.id)=layout.buttons.id
 				|  pre code
-			.collapse.show(id="collapse" + components.buttons.id)
+			.collapse.show(id="collapse" + layout.buttons.id)
 				pre.line-numbers.rounded-0
 					code.language-html
 						each Color,ColorValue in theme_colors

@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     fs           = require('fs'),
     plugin = require('gulp-load-plugins')();
 
-gulp.task('ui_pug:build', function () {
+gulp.task('uiPug:build', function () {
     return gulp.src('src/ui/*.pug')
         .pipe(plugin.plumber())
         .pipe(plugin.data(function(file) { // Парсим JSON

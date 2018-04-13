@@ -1,0 +1,156 @@
+{
+  "alert": {
+    "title": "Alert",
+    "id": "Alert",
+    "file": "Alert.html",
+    "precode": "true",
+    "level": ""
+  },
+  "badges": {
+    "title": "Badges",
+    "id": "Badges",
+    "file": "Badges.html",
+    "precode": "false",
+    "level": ""
+  },
+  "borders": {
+    "title": "Borders",
+    "id": "Borders",
+    "file": "Borders.html",
+    "precode": "false",
+    "level": ""
+  },
+  "breadcrumb": {
+    "title": "Breadcrumb",
+    "id": "Breadcrumb",
+    "file": "Breadcrumb.html",
+    "precode": "false",
+    "level": "open"
+  },
+  "button_group": {
+    "title": "Button group",
+    "id": "Button_group",
+    "file": "Button_group.html",
+    "precode": "false",
+    "level": ""
+  },
+  "buttons": {
+    "title": "Buttons",
+    "id": "Buttons",
+    "file": "Buttons.html",
+    "precode": "true",
+    "level": ""
+  },
+  "cards": {
+    "title": "Cards",
+    "id": "Cards",
+    "file": "Cards.html",
+    "precode": "false",
+    "level": ""
+  },
+  "carousel": {
+    "title": "Carousel",
+    "id": "Carousel",
+    "file": "Carousel.html",
+    "precode": "false",
+    "level": ""
+  },
+  "collapse": {
+    "title": "Collapse",
+    "id": "Collapse",
+    "file": "Collapse.html",
+    "precode": "false",
+    "level": ""
+  },
+  "color": {
+    "title": "Color",
+    "id": "Color",
+    "file": "Color.html",
+    "precode": "false",
+    "level": ""
+  },
+  "dropdowns": {
+    "title": "Dropdowns",
+    "id": "Dropdowns",
+    "file": "Dropdowns.html",
+    "precode": "false",
+    "level": ""
+  },
+  "forms": {
+    "title": "Forms",
+    "id": "Forms",
+    "file": "Forms.html",
+    "precode": "false",
+    "level": ""
+  },
+  "input_group": {
+    "title": "Input group",
+    "id": "Input_group",
+    "file": "Input_group.html",
+    "precode": "false",
+    "level": ""
+  },
+  "list_group": {
+    "title": "List group",
+    "id": "List_group",
+    "file": "List_group.html",
+    "precode": "false",
+    "level": "close"
+  },
+  "modal": {
+    "title": "Modal",
+    "id": "Modal",
+    "file": "Modal.html",
+    "precode": "false",
+    "level": ""
+  },
+  "navbar": {
+    "title": "Navbar",
+    "id": "Navbar",
+    "file": "Navbar.html",
+    "precode": "true",
+    "level": ""
+  },
+  "navs": {
+    "title": "Navs",
+    "id": "Navs",
+    "file": "Navs.html",
+    "precode": "false",
+    "level": ""
+  },
+  "pagination": {
+    "title": "Pagination",
+    "id": "Pagination",
+    "file": "Pagination.html",
+    "precode": "false",
+    "level": ""
+  },
+  "popovers": {
+    "title": "Popovers",
+    "id": "Popovers",
+    "file": "Popovers.html",
+    "precode": "false",
+    "level": ""
+  },
+  "progress": {
+    "title": "Progress",
+    "id": "Progress",
+    "file": "Progress.html",
+    "precode": "false",
+    "level": ""
+  },
+  "tooltips": {
+    "title": "Tooltips",
+    "id": "Tooltips",
+    "file": "Tooltips.html",
+    "precode": "false",
+    "level": ""
+  },
+  "typography": {
+    "title": "Typography",
+    "id": "Typography",
+    "file": "Typography.html",
+    "precode": "false",
+    "level": ""
+  }
+}
