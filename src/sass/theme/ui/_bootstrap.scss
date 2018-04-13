@@ -3,14 +3,3 @@
 		cursor:pointer;
 	}
 }
-
-@include media-breakpoint-down(xs) {
-	.container {
-		width: 100%;
-	}
-}
-
-#editor {
-	height: 400px;
-	width: 100%;
-}
