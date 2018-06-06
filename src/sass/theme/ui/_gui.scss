@@ -1,3 +1,17 @@
 .pos-r  {
   position: relative;
 }
+
+// Размер шрифта в пикселях
+@each $font-size in 12, 14, 16, 18, 20, 24, 40, 44 {
+  .fs-#{$font-size} {
+    font-size: #{$font-size}px;
+  }
+}
+@include media-breakpoint-up(md) {
+  @each $font-size in 16, 20, 30 {
+    .fs-md-#{$font-size} {
+      font-size: #{$font-size}px;
+    }
+  }
+}
