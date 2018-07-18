@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "bootstrap": "latest",
+    "gulp.spritesmith": "^6.9.0",
     "holderjs": "latest",
     "jquery": "latest",
     "minimatch": "latest",

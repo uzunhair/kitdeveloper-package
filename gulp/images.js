@@ -20,3 +20,24 @@ gulp.task('img:build', function () {
         ]))
         .pipe(gulp.dest(config.path.build.img)) //И бросим в build
 });
+
+
+
+gulp.task('sprite', function() {
+    let spritesmith = require('gulp.spritesmith');
+    let spriteData =
+        gulp.src('./src/img/img-sprite/*.*')
+            .pipe(spritesmith({
+                imgName: '../img/sprite.png',
+                cssName: '_sprite.scss',
+                cssFormat: 'scss',
+                algorithm: 'binary-tree',
+                //cssTemplate: 'stylus.template.mustache',
+                // cssVarMap: function(sprite) {
+                //     sprite.name = 's-' + sprite.name
+                // }
+            }));
+
+    spriteData.img.pipe(gulp.dest('./src/img/')); // путь, куда сохраняем картинку
+    spriteData.css.pipe(gulp.dest('./src/sass/sprite/')); // путь, куда сохраняем стили
+});
