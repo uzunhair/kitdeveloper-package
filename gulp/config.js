@@ -34,7 +34,7 @@ module.exports = {
             styleVendors: 'src/sass/system.scss',
             styleTypografy: 'src/sass/typografy.scss',
             img: 'src/img/**/*.+(jpg|jpeg|png)',
-            svg: 'src/img/svg-sprite/*.*',
+            svg: 'src/img/svg-sprite/*.svg',
             fonts: 'src/fonts/**/*.*'
         },
         watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
