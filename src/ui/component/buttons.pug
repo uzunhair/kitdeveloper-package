@@ -21,3 +21,12 @@ section.py-3(id= layout.buttons.id)
 							='<button type="button" class="btn btn-' + ColorValue + '">' + ColorValue + '</button>'
 							|
 							|
+
+		h4.mt-3 Size
+		.mb-3
+			each size in sizes
+				.form-group.row
+					.col
+						+button('text-capitalize btn-warning btn-' + size, 'Санкт-Петербург')
+					.col
+						input.form-control(type='text', placeholder='.form-control-'+ size, class='Санкт-Петербург form-control-'+ size)
