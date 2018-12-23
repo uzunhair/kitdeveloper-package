@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     config = require('./config.js'),
     plugin = require('gulp-load-plugins')();
 
-gulp.task('svgSprite:build', function() {
+gulp.task('svgSprite:build', function(cb) {
     gulp.src(config.path.src.svg)
         .pipe(plugin.plumber())
         .pipe(plugin.svgmin({
@@ -37,4 +37,5 @@ gulp.task('svgSprite:build', function() {
             }
         }))
         .pipe(gulp.dest(config.path.build.svg));
+        cb();
 });

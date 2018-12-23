@@ -26,7 +26,7 @@ module.exports = {
                 'src/js/concat/bootstrap/tab.js',
                 'src/js/concat/bootstrap/tooltip.js',
                 'src/js/concat/bootstrap/popover.js',
-                'src/js/concat/owl.carousel/owl.carousel.js',
+                'node_modules/owl.carousel/dist/owl.carousel.js',
                 'node_modules/jquery.dotdotdot/dist/jquery.dotdotdot.js',
                 'src/js/concat/*.js',
                 'src/js/setting.js'],

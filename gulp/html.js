@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     config = require('./config.js'),
     plugin = require('gulp-load-plugins')();
 
-gulp.task('html:build', function () {
+gulp.task('html:build', function (cb) {
     gulp.src(config.path.src.html) //Выберем файлы по нужному пути
         .pipe(plugin.plumber())
         .pipe(plugin.fileInclude({
@@ -10,5 +10,6 @@ gulp.task('html:build', function () {
             basepath: '@file',
             indent: true
         }))
-        .pipe(gulp.dest(config.path.build.html)) //Выплюнем их в папку build
+        .pipe(gulp.dest(config.path.build.html)); //Выплюнем их в папку build
+    cb();
 });

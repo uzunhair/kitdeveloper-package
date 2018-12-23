@@ -57,5 +57,12 @@ gulp.task('ftp-deploy-watch', function () {
         });
 });
 
-gulp.task('ftp', ['build', 'ftp-deploy', 'ftp-deploy-watch', 'watch']);
+gulp.task('ftp', function(cb) {
+  gulp.series(
+    'build',
+    'ftp-deploy',
+    'ftp-deploy-watch',
+    'watch'
+  )(cb)
+});
 /* FTP End **/

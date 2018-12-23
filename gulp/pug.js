@@ -1,9 +1,12 @@
+"use strict";
+
 var gulp = require('gulp'),
     config = require('./config.js'),
     fs           = require('fs'),
+    browserSync = require('browser-sync'),
     plugin = require('gulp-load-plugins')();
 
-gulp.task('pug:build', function () {
+gulp.task('pug:build', function (cb) {
     return gulp.src(config.path.src.pug)
         .pipe(plugin.plumber())
         .pipe(plugin.data(function(file) { // Парсим JSON

@@ -19,7 +19,7 @@ var vendorList = {
     // }
 };
 
-gulp.task('npm:copy', function () {
+gulp.task('npm:copy', function (cb) {
     for (var vendorName in vendorList) {
         var vendorItem = vendorList[vendorName];
         for (var vendorPath in vendorItem) {
@@ -30,4 +30,5 @@ gulp.task('npm:copy', function () {
                 .pipe(gulp.dest(vendorItem[vendorPath]));
         }
     }
+    cb();
 });
