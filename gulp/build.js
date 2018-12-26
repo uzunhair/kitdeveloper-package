@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 gulp.task('build', function(cb) {
     gulp.parallel(
-      'svgSprite:build',
+      'svgIcon',
       //'html:build',
       'pug:build',
       'js:build',

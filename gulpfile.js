@@ -6,7 +6,6 @@ var gulp = require("gulp"),
 
 gulp.task('default', function(cb) {
     gulp.parallel(
-      //'clean',
       'build',
       'watch',
       'browser-sync'

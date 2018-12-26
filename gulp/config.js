@@ -6,7 +6,7 @@ module.exports = {
             js: 'dist/js/',
             style: 'dist/css/',
             img: 'dist/img/',
-            svg: 'src/img/svg/',
+            svgIcon: 'src/img/svg/',
             fonts: 'dist/fonts/'
         },
         src: { //Пути откуда брать исходники
@@ -33,8 +33,8 @@ module.exports = {
             styleTheme: 'src/sass/theme.scss',
             styleVendors: 'src/sass/system.scss',
             styleTypografy: 'src/sass/typografy.scss',
-            img: 'src/img/**/*.+(jpg|jpeg|png)',
-            svg: 'src/img/svg-sprite/*.svg',
+            img: ['src/img/**/*.+(png|jpg|jpeg|gif|svg)', '!src/img/svg*/**'],
+            svgIcon: 'src/img/svg-icon/*.svg',
             fonts: 'src/fonts/**/*.*'
         },
         watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
@@ -43,7 +43,8 @@ module.exports = {
             js: 'src/js/**/*.js',
             styleTheme: ['src/sass/theme.scss','src/sass/theme/**/*.scss', 'src/sass/config/*.scss'],
             styleVendors: ['src/sass/system.scss', 'src/sass/vendors/**/*.scss', 'src/sass/config/*.scss'],
-            img: 'src/img/**/*.*',
+            img: ['src/img/**/*.+(png|jpg|jpeg|gif|svg)', '!src/img/svg*/**'],
+            svgIcon: 'src/img/svg-icon/*.svg',
             fonts: 'src/fonts/**/*.*'
         },
         browser: {
@@ -51,7 +52,8 @@ module.exports = {
             pug: 'dist/**/*.pug',
             js: 'dist/js/**/*.js',
             style: 'dist/css/**/*.*',
-            img: 'dist/img/**/*.*',
+            img: ['src/img/**/*.+(png|jpg|jpeg|gif|svg)', '!src/img/svg*/**'],
+            svgIcon: 'src/img/svg-icon/*.svg',
             fonts: 'dist/fonts/**/*.*'
         },
         clean: {
@@ -61,7 +63,6 @@ module.exports = {
             img: 'dist/img/',
             svg: 'src/sass/sprite/_sprite.scss',
             fonts: 'dist/fonts/'
-
         }
     }
 };

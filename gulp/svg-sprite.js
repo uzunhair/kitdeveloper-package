@@ -2,9 +2,12 @@ var gulp = require('gulp'),
     config = require('./config.js'),
     plugin = require('gulp-load-plugins')();
 
-gulp.task('svgSprite:build', function(cb) {
-    gulp.src(config.path.src.svg)
+gulp.task('svgIcon', function(cb) {
+    gulp.src(config.path.src.svgIcon)
         .pipe(plugin.plumber())
+        .pipe(plugin.debug({
+            title: 'File Src:'
+        }))
         .pipe(plugin.svgmin({
             js2svg: {
                 pretty: true
@@ -36,6 +39,9 @@ gulp.task('svgSprite:build', function(cb) {
                 }
             }
         }))
-        .pipe(gulp.dest(config.path.build.svg));
+        .pipe(gulp.dest(config.path.build.svgIcon))
+        .pipe(plugin.debug({
+            title: 'File Build:'
+        }));
         cb();
 });

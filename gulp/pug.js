@@ -3,7 +3,6 @@
 var gulp = require('gulp'),
     config = require('./config.js'),
     fs           = require('fs'),
-    browserSync = require('browser-sync'),
     plugin = require('gulp-load-plugins')();
 
 gulp.task('pug:build', function (cb) {
