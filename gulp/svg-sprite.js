@@ -14,7 +14,32 @@ gulp.task('svgIcon', function(cb) {
             }
         }))
         .pipe(plugin.cheerio({
-            run: function($) {
+            run: function($, file) {
+                $('svg *').each(function () {
+                    var svg = $(this);
+                    //
+                    var stroke = svg.attr('stroke'),
+                        stroke_width = svg.attr('stroke-width'),
+                        data_width = svg.attr('data-width'),
+                        fill = svg.attr('fill');
+
+                    if (typeof stroke !== typeof undefined && stroke !== 'none') {
+                        svg.removeAttr('stroke');
+                        svg.attr('data-stroke', 'true');
+                        if (typeof data_width !== typeof undefined) {
+                            svg.attr('data-width', stroke_width);
+                        }
+                    }
+
+                    if (typeof fill !== typeof undefined && fill !== 'none') {
+                        svg.removeAttr('fill');
+                        svg.attr('data-fill', 'true');
+
+                    } else {
+                        svg.attr('data-fill-none', 'none');
+                    }
+
+                });
                 $('[fill]').removeAttr('fill');
                 $('[stroke]').removeAttr('stroke');
                 $('[style]').removeAttr('style');
@@ -39,6 +64,8 @@ gulp.task('svgIcon', function(cb) {
                 }
             }
         }))
+        .pipe(plugin.replace('data-width', 'stroke-width'))
+        .pipe(plugin.replace('data-fill-none', 'fill'))
         .pipe(gulp.dest(config.path.build.svgIcon))
         .pipe(plugin.debug({
             title: 'File Build:'
