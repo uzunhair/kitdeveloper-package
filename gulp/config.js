@@ -32,7 +32,6 @@ module.exports = {
                 'src/js/setting.js'],
             styleTheme: 'src/sass/theme.scss',
             styleVendors: 'src/sass/system.scss',
-            styleTypografy: 'src/sass/typografy.scss',
             img: ['src/img/**/*.+(png|jpg|jpeg|gif|svg)', '!src/img/svg*/**'],
             svgIcon: 'src/img/svg-icon/*.svg',
             fonts: 'src/fonts/**/*.*'
