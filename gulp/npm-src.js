@@ -13,6 +13,10 @@ var vendorList = {
     popper: {
         './node_modules/popper.js/dist/umd/popper.js': './src/js/concat/'
     },
+    fontAwesome: {
+        './node_modules/font-awesome/fonts/*.*':    './src/fonts/',
+        './node_modules/font-awesome/scss/*.*':     './src/sass/vendors/font-awesome/'
+    },
     // owl_carousel: {
     //     './node_modules/owl.carousel/src/scss/**': './src/sass/vendors/owl.carousel',
     //     './node_modules/owl.carousel/dist/owl.carousel.js': './src/js/concat/owl.carousel'

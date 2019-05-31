@@ -1,9 +1,105 @@
-@charset "UTF-8";
-@import 'config/variables';
-// compile bootstrap
-@import 'vendors/bootstrap/bootstrap';
+@import "vendors/bootstrap/functions";
+@import "config/variables";
+
+// Vendor
+@import "vendors/bootstrap/vendor/rfs";
+
+// Deprecate
+@import "vendors/bootstrap/mixins/deprecate";
+
+// Mixins Utilities
+@import "vendors/bootstrap/mixins/breakpoints";
+@import "vendors/bootstrap/mixins/hover";
+@import "vendors/bootstrap/mixins/image";
+@import "vendors/bootstrap/mixins/badge";
+@import "vendors/bootstrap/mixins/resize";
+@import "vendors/bootstrap/mixins/screen-reader";
+@import "vendors/bootstrap/mixins/size";
+@import "vendors/bootstrap/mixins/reset-text";
+@import "vendors/bootstrap/mixins/text-emphasis";
+@import "vendors/bootstrap/mixins/text-hide";
+@import "vendors/bootstrap/mixins/text-truncate";
+@import "vendors/bootstrap/mixins/visibility";
+
+// Mixins Components
+@import "vendors/bootstrap/mixins/alert";
+@import "vendors/bootstrap/mixins/buttons";
+@import "vendors/bootstrap/mixins/caret";
+@import "vendors/bootstrap/mixins/pagination";
+@import "vendors/bootstrap/mixins/lists";
+@import "vendors/bootstrap/mixins/list-group";
+@import "vendors/bootstrap/mixins/nav-divider";
+@import "vendors/bootstrap/mixins/forms";
+@import "vendors/bootstrap/mixins/table-row";
+
+// Mixins Skins
+@import "vendors/bootstrap/mixins/background-variant";
+@import "vendors/bootstrap/mixins/border-radius";
+@import "vendors/bootstrap/mixins/box-shadow";
+@import "vendors/bootstrap/mixins/gradients";
+@import "vendors/bootstrap/mixins/transition";
+
+// Mixins Layout
+@import "vendors/bootstrap/mixins/clearfix";
+@import "vendors/bootstrap/mixins/grid-framework";
+@import "vendors/bootstrap/mixins/grid";
+@import "vendors/bootstrap/mixins/float";
+
+@import "vendors/bootstrap/root";
+@import "vendors/bootstrap/reboot";
+//@import "vendors/bootstrap/type";
+//@import "vendors/bootstrap/images";
+//@import "vendors/bootstrap/code";
+//@import "vendors/bootstrap/grid";
+//@import "vendors/bootstrap/tables";
+//@import "vendors/bootstrap/forms";
+//@import "vendors/bootstrap/buttons";
+//@import "vendors/bootstrap/transitions";
+//@import "vendors/bootstrap/dropdown";
+//@import "vendors/bootstrap/button-group";
+//@import "vendors/bootstrap/input-group";
+//@import "vendors/bootstrap/custom-forms";
+//@import "vendors/bootstrap/nav";
+//@import "navbar";
+//@import "vendors/bootstrap/card";
+//@import "vendors/bootstrap/breadcrumb";
+//@import "vendors/bootstrap/pagination";
+//@import "badge";
+//@import "vendors/bootstrap/alert";
+//@import "progress";
+//@import "vendors/bootstrap/media";
+//@import "vendors/bootstrap/list-group";
+//@import "vendors/bootstrap/close";
+//@import "vendors/bootstrap/toasts";
+//@import "vendors/bootstrap/modal";
+//@import "vendors/bootstrap/tooltip";
+//@import "vendors/bootstrap/popover";
+//@import "carousel";
+//@import "vendors/bootstrap/print";
+//@import "vendors/bootstrap/spinners";
+
+// Utilities
+//@import "vendors/bootstrap/utilities/align";
+//@import "vendors/bootstrap/utilities/background";
+//@import "vendors/bootstrap/utilities/borders";
+//@import "vendors/bootstrap/utilities/clearfix";
+//@import "vendors/bootstrap/utilities/display";
+//@import "vendors/bootstrap/utilities/embed";
+//@import "vendors/bootstrap/utilities/flex";
+//@import "vendors/bootstrap/utilities/float";
+//@import "vendors/bootstrap/utilities/overflow";
+//@import "vendors/bootstrap/utilities/position";
+//@import "vendors/bootstrap/utilities/screenreaders";
+//@import "vendors/bootstrap/utilities/shadows";
+//@import "vendors/bootstrap/utilities/sizing";
+//@import "vendors/bootstrap/utilities/stretched-link";
+//@import "vendors/bootstrap/utilities/spacing";
+//@import "vendors/bootstrap/utilities/text";
+//@import "vendors/bootstrap/utilities/visibility";
+
+
 // compile fontawesome
-@import 'vendors/fontawesome/font-awesome';
+//@import 'vendors/font-awesome/font-awesome';
 
 //@import 'vendors/owl.carousel/owl.carousel';
 //@import 'vendors/owl.carousel/owl.theme.default';

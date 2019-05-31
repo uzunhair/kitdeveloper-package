@@ -1,6 +1,8 @@
 doctype html
 
 include ../mixin/breadcrumb
+include ../mixin/pagination
+include ../mixin/img
 include ../mixin/svg
 
 block variables
@@ -11,7 +13,6 @@ html(lang="ru-RU")
 		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 		meta(name="description" content="")
 		meta(name="author" content="")
-		link(rel="icon" href="favicon.ico")
 		title #{title}
 
 		// Bootstrap core CSS
@@ -19,15 +20,16 @@ html(lang="ru-RU")
 		link(href="css/theme.css" rel="stylesheet")
 		block head
 
-	body(class=bodyClass)
-		include header
+	body.d-flex.flex-column.h-100
+		.main-wrap.flex-shrink-0
+			include header
 
-		block content
+			block content
 
 		include footer
 
 		script(src="js/jquery.min.js")
-		script(src="js/theme.min.js")
+		script(src="js/theme.js")
 		script(src="js/holder.js")
 
 

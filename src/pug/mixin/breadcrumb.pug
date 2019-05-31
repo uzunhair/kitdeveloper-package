@@ -1,12 +1,17 @@
 //- +breadcrumb('Конечный пункт', ['Список пунктов'])
 
 mixin breadcrumb(active_item, items)
-	nav(aria-label="breadcrumb" role="navigation")
-		ol.breadcrumb
-			li.breadcrumb-item
-				a(href="#") Главная
+	nav(aria-label="breadcrumb")
+		ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+			li.breadcrumb-item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+				a(href="#", itemprop="item")
+					span(itemprop="name") Главная
+					meta(itemprop="position" content="1")
 			-var items = items || ''
+			-var i = 2
 			each item in items
-				li.breadcrumb-item
-					a(href="#")= item
+				li.breadcrumb-item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+					a(href="#", itemprop="item" title=item)
+						span(itemprop="name")= item
+						meta(itemprop="position" content=i++)
 			li.breadcrumb-item.active(aria-current="page")=active_item

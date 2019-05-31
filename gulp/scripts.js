@@ -10,7 +10,7 @@ gulp.task('js:build', function (cb) {
     gulp.src(config.path.src.jsConcat)
         // .pipe(plugin.uglify())
         .pipe(plugin.plumber())
-        .pipe(plugin.concat('theme.min.js'))
+        .pipe(plugin.concat('theme.js'))
         .pipe(gulp.dest(config.path.build.js));
     cb();
 });
