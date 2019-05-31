@@ -3,5 +3,10 @@
 @import 'vendors/bootstrap/mixins';
 @import 'vendors/bootstrap/variables';
 
-@import 'theme/ui';
+@import 'theme/typografy';
+@import 'theme/gui';
+@import 'theme/layout';
+@import 'theme/bootstrap';
+@import 'theme/page';
+@import 'theme/widget';
 @import 'sprite/sprite';
