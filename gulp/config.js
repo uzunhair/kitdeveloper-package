@@ -14,7 +14,7 @@ module.exports = {
             pug: 'src/pug/*.pug',
             jsSeparate: ['src/js/separate/*.js', 'node_modules/holderjs/holder.js'], // статичные js файлы
             jsConcat: [
-                'src/js/concat/popper.js',
+                'node_modules/popper.js/dist/umd/popper.min.js',
                 'src/js/concat/bootstrap/util.js',
                 'src/js/concat/bootstrap/alert.js',
                 'src/js/concat/bootstrap/button.js',
