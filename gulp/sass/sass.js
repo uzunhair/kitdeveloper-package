@@ -9,12 +9,11 @@ gulp.task('styleTheme:build', function (cb) {
         .pipe(plugin.sass().on('error', plugin.sass.logError)) //Скомпилируем
         .pipe(plugin.sassUnicode())
         .pipe(plugin.autoprefixer({
-            browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(plugin.pxtorem())
         .pipe(plugin.sourcemaps.write(''))
-        .pipe(gulp.dest(config.path.build.style)) //И в build
+        .pipe(gulp.dest(config.path.build.style));
     cb();
 });
 
@@ -25,11 +24,10 @@ gulp.task('styleVendors:build', function (cb) {
         .pipe(plugin.sass().on('error', plugin.sass.logError)) //Скомпилируем
         .pipe(plugin.sassUnicode())
         .pipe(plugin.autoprefixer({
-            browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(plugin.pxtorem())
         .pipe(plugin.sourcemaps.write(''))
-        .pipe(gulp.dest(config.path.build.style)) //И в build
+        .pipe(gulp.dest(config.path.build.style));
   cb();
 });

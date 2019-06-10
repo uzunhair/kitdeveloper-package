@@ -10,14 +10,13 @@ gulp.task('styleTheme.min:build', function (cb) {
         .pipe(plugin.sassUnicode())
         .pipe(plugin.cssnano({zindex: false})) //Сожмем
         .pipe(plugin.autoprefixer({
-            browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(plugin.pxtorem())
         .pipe(plugin.rename({suffix: '.min'}))
         //.pipe(plugin.sourcemaps.write(''))
         .pipe(plugin.duration('style.min:build time'))
-        .pipe(gulp.dest(config.path.build.style)) //И в build
+        .pipe(gulp.dest(config.path.build.style));
     cb();
 });
 
@@ -29,13 +28,12 @@ gulp.task('styleVendors.min:build', function (cb) {
         .pipe(plugin.sassUnicode())
         .pipe(plugin.cssnano({zindex: false})) //Сожмем
         .pipe(plugin.autoprefixer({
-            browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(plugin.pxtorem())
         .pipe(plugin.rename({suffix: '.min'}))
         //.pipe(plugin.sourcemaps.write(''))
         .pipe(plugin.duration('style.min:build time'))
-        .pipe(gulp.dest(config.path.build.style)) //И в build
+        .pipe(gulp.dest(config.path.build.style));
     cb();
 });
