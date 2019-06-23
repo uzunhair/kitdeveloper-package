@@ -10,9 +10,6 @@ var vendorList = {
         './node_modules/bootstrap/js/dist/*.js':    './src/js/concat/bootstrap',
         './node_modules/bootstrap/scss/**':         './src/sass/vendors/bootstrap'
     },
-    popper: {
-        './node_modules/popper.js/dist/umd/popper.js': './src/js/concat/'
-    },
     fontAwesome: {
         './node_modules/font-awesome/fonts/*.*':    './src/fonts/',
         './node_modules/font-awesome/scss/*.*':     './src/sass/vendors/font-awesome/'
