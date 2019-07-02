@@ -13,11 +13,7 @@ var vendorList = {
     fontAwesome: {
         './node_modules/font-awesome/fonts/*.*':    './src/fonts/',
         './node_modules/font-awesome/scss/*.*':     './src/sass/vendors/font-awesome/'
-    },
-    // owl_carousel: {
-    //     './node_modules/owl.carousel/src/scss/**': './src/sass/vendors/owl.carousel',
-    //     './node_modules/owl.carousel/dist/owl.carousel.js': './src/js/concat/owl.carousel'
-    // }
+    }
 };
 
 gulp.task('npm:copy', function (cb) {
@@ -26,7 +22,6 @@ gulp.task('npm:copy', function (cb) {
         for (var vendorPath in vendorItem) {
             // console.log(vendorName, 'src: ' + vendorPath, 'dest: ' + vendorItem[vendorPath]);
             gulp.src(vendorPath)
-                .pipe(plugin.changed(vendorItem[vendorPath]))
                 .pipe(plugin.debug({title: 'start:' + vendorName}))
                 .pipe(gulp.dest(vendorItem[vendorPath]));
         }
