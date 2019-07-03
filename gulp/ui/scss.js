@@ -5,8 +5,8 @@ var gulp = require('gulp'),
 gulp.task('uiScss:build', function (cb) {
     gulp.src('src/ui/css/*.*')
         .pipe(plugin.plumber())
-        .pipe(plugin.sourcemaps.init({largeFile: true})) //То же самое что и с js
-        .pipe(plugin.sass().on('error', plugin.sass.logError)) //Скомпилируем
+        .pipe(plugin.sourcemaps.init({largeFile: true}))
+        .pipe(plugin.sass().on('error', plugin.sass.logError))
         .pipe(plugin.sassUnicode())
         .pipe(plugin.autoprefixer({
             browsers: ['last 2 versions'],

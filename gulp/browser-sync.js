@@ -1,17 +1,21 @@
-var gulp = require('gulp'),
-    config = require('./config.js'),
-    browserSync = require('browser-sync').create();
+"use strict";
 
-gulp.task('browser-sync', function(cb) {
+import gulp from "gulp";
+import { path } from "./config.js";
+import browserSync from  "browser-sync";
+
+gulp.task("browser-sync", () => {
     browserSync.init({
-        server: {
-            baseDir: "./dist/"
-        },
-        notify: false,
-        reloadDelay: 1000,
-        port: 3100
+        server: "./dist/",
+        port: 4000,
+        notify: false
     });
 
-    browserSync.watch('dist/**/*.*').on('change', browserSync.reload);
-    cb();
+    gulp.watch(path.pug.watch, gulp.parallel("pug"));
+    gulp.watch(path.styles.theme.watch, gulp.parallel("styles:theme"));
+    gulp.watch(path.styles.vendors.watch, gulp.parallel("styles:vendors"));
+    gulp.watch(path.scripts.watch, gulp.parallel("scripts"));
+    gulp.watch(path.sprites.watch, gulp.parallel("sprites"));
+    gulp.watch(path.images.watch, gulp.parallel("images"));
+    gulp.watch(path.fonts.watch, gulp.parallel("fonts"));
 });

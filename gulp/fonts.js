@@ -1,8 +1,10 @@
-var gulp = require('gulp');
-var config = require('./config.js');
+"use strict";
 
-gulp.task('fonts:build', function(cb) {
-    gulp.src(config.path.src.fonts) //Выберем файлы по нужному пути
-      .pipe(gulp.dest(config.path.build.fonts)); //Выплюнем их в папку build
-    cb();
+import gulp from "gulp";
+import { path } from "./config.js";
+
+gulp.task('fonts', function (cb) {
+	gulp.src(path.fonts.src)
+		.pipe(gulp.dest(path.fonts.dist));
+	cb();
 });

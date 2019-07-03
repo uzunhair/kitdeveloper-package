@@ -1,14 +1,22 @@
 {
-  "name": "gulp.kitdeveloper",
-  "version": "1.0.0",
-  "description": "Gulp.Default",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "kitdeveloper-package",
+  "version": "1.0.1",
+  "description": "A package for a quick start",
+  "author": "Uzunhair Zainalabidov uzunhair@yandex.ru",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uzunhair/kitdeveloper-package.git"
   },
-  "author": "Atid",
-  "license": "ISC",
+  "scripts": {
+    "start": "gulp",
+    "production": "gulp production --production",
+    "zip": "gulp zip"
+  },
+  "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "browser-sync": "latest",
     "css-mqpacker": "latest",
     "del": "latest",
@@ -16,14 +24,16 @@
     "gulp-autoprefixer": "latest",
     "gulp-changed": "latest",
     "gulp-cheerio": "latest",
+    "gulp-clean-css": "latest",
     "gulp-concat": "latest",
     "gulp-cssnano": "latest",
     "gulp-data": "latest",
     "gulp-debug": "latest",
     "gulp-duration": "latest",
-    "gulp-file-include": "latest",
+    "gulp-favicons": "^2.3.1",
     "gulp-frep": "latest",
     "gulp-ftp": "latest",
+    "gulp-group-css-media-queries": "latest",
     "gulp-html-prettify": "latest",
     "gulp-if": "latest",
     "gulp-imagemin": "latest",
@@ -44,10 +54,12 @@
     "gulp-svgmin": "latest",
     "gulp-uglify": "latest",
     "gulp-util": "latest",
-    "gulp-zip": "latest",
+    "gulp-version-number": "^0.2.4",
+    "gulp-zip": "^5.0.0",
     "jquery.dotdotdot": "latest",
     "require-dir": "latest",
-    "vinyl-ftp": "latest"
+    "vinyl-ftp": "latest",
+    "yargs": "^13.2.4"
   },
   "dependencies": {
     "bootstrap": "latest",

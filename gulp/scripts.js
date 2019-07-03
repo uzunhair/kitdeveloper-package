@@ -1,16 +1,25 @@
-var gulp = require('gulp'),
-    config = require('./config.js'),
-    plugin = require('gulp-load-plugins')();
+"use strict";
 
-gulp.task('js:build', function (cb) {
-    gulp.src(config.path.src.jsSeparate)
-        .pipe(plugin.plumber())
-        .pipe(gulp.dest(config.path.build.js));
+import gulp from "gulp";
+import { path } from "./config.js";
+import plumber from "gulp-plumber";
+import uglify from "gulp-uglify";
+import gulpif from "gulp-if";
+import concat from "gulp-concat";
+import yargs from "yargs";
 
-    gulp.src(config.path.src.jsConcat)
-        // .pipe(plugin.uglify())
-        .pipe(plugin.plumber())
-        .pipe(plugin.concat('theme.js'))
-        .pipe(gulp.dest(config.path.build.js));
-    cb();
+const argv = yargs.argv,
+	production = !!argv.production;
+
+gulp.task('scripts', function (cb) {
+	gulp.src(path.scripts.seperate.src)
+		.pipe(plumber())
+		.pipe(gulp.dest(path.scripts.dist));
+
+	gulp.src(path.scripts.concat.src)
+		.pipe(gulpif(production, uglify()))
+		.pipe(plumber())
+		.pipe(concat('app.js'))
+		.pipe(gulp.dest(path.scripts.dist));
+	cb();
 });

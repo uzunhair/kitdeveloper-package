@@ -1,6 +1,6 @@
 module.exports = {
     path: {
-        build: { //Тут мы укажем куда складывать готовые после сборки файлы
+        build: {
             html: 'dist/',
             pug: 'dist/',
             js: 'dist/js/',
@@ -9,10 +9,10 @@ module.exports = {
             svg: 'src/img/svg/',
             fonts: 'dist/fonts/'
         },
-        src: { //Пути откуда брать исходники
+        src: {
             html: 'src/html/*.html',
             pug: 'src/pug/*.pug',
-            jsSeparate: ['src/js/separate/*.js', 'node_modules/holderjs/holder.js'], // статичные js файлы
+            jsSeparate: ['src/js/separate/*.js', 'node_modules/holderjs/holder.js'],
             jsConcat: [
                 'node_modules/popper.js/dist/umd/popper.min.js',
                 'node_modules/bootstrap/js/dist/util.js',
@@ -36,7 +36,7 @@ module.exports = {
             svg: 'src/img/svg-sprite/*.*',
             fonts: 'src/fonts/**/*.*'
         },
-        watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
+        watch: {
             html: 'src/**/*.html',
             pug: 'src/pug/**/*.*',
             js: 'src/js/**/*.js',

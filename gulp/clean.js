@@ -1,14 +1,11 @@
-var gulp = require('gulp'),
-    config = require('./config'),
-    del = require('del');
+"use strict";
+
+import gulp from "gulp";
+import { path } from "./config.js";
+import del from "del";
 
 gulp.task('clean', function () {
     return del([
-        config.path.clean.html,
-        config.path.clean.js,
-        config.path.clean.style,
-        config.path.clean.img,
-        config.path.clean.svg,
-        config.path.clean.fonts
+        path.clean.dist,
     ]);
 });

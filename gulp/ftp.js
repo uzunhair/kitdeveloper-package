@@ -1,5 +1,7 @@
-var gulp = require('gulp'),
-    config = require('./config.js'),
+"use strict";
+
+const gulp = require('gulp'),
+	{path} = require('./config.js'),
     plugin = require('gulp-load-plugins')();
 
 
