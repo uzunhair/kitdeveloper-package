@@ -1,5 +1,7 @@
 "use strict";
 
+import currentDate  from "../core/currentDate";
+
 const path = {
 	pug: {
 		src: [
@@ -91,7 +93,11 @@ const path = {
 	},
 	clean: {
 		dist: "dist"
+	},
+	zip: {
+		src: "dist/**/**",
+		dist: "zip"
 	}
 };
 
-export { path }
+export {path, currentDate}

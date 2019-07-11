@@ -1,13 +1,18 @@
+import {path, currentDate} from "./config";
 import gulp from 'gulp';
 import zip from 'gulp-zip';
 import debug from "gulp-debug";
+import rename from "gulp-rename";
 
 gulp.task('zip', function (cb) {
-	gulp.src('dist')
+	gulp.src(path.zip.src)
 		.pipe(zip('archive.zip'))
-		.pipe(debug({
-			"title": "CSS files"
+		.pipe(rename(function (path) {
+			path.basename += currentDate;
 		}))
-		.pipe(gulp.dest('zip'));
+		.pipe(debug({
+			"title": "Zip files"
+		}))
+		.pipe(gulp.dest(path.zip.dist));
 	cb();
 });
