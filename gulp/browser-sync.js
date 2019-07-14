@@ -11,7 +11,8 @@ gulp.task("browser-sync", () => {
         notify: false
     });
 
-    gulp.watch(path.pug.watch, gulp.parallel("pug"));
+    gulp.watch(path.data.watch, gulp.parallel("data"));
+    gulp.watch([path.pug.watch, path.data.dist], gulp.parallel("pug"));
     gulp.watch(path.styles.theme.watch, gulp.parallel("styles:theme"));
     gulp.watch(path.styles.vendors.watch, gulp.parallel("styles:vendors"));
     gulp.watch(path.scripts.watch, gulp.parallel("scripts"));

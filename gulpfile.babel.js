@@ -6,7 +6,10 @@ const reqDir = require('require-dir');
 
 gulp.task('default', function(cb) {
 	gulp.series(
-		'clean',
+		[
+			'clean',
+			'data',
+		],
 		gulp.parallel(
 			'styles:vendors',
 			'styles:theme',
@@ -20,25 +23,10 @@ gulp.task('default', function(cb) {
 	)(cb);
 });
 
-gulp.task('dev', function(cb) {
-	gulp.series(
-		'clean',
-		gulp.series(
-			'styles:vendors',
-			'styles:theme',
-			'pug',
-			'scripts',
-			'fonts',
-			'images',
-			'sprites',
-			'favicons',
-		)
-	)(cb);
-});
-
 gulp.task('production', function(cb) {
 	gulp.series("clean",
 		gulp.series([
+			'data',
 			'pug',
 			'scripts',
 			'styles:production',

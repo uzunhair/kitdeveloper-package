@@ -1,0 +1,29 @@
+doctype html
+
+include ../components/breadcrumb/breadcrumb
+include ../components/pagination/pagination
+include ../components/image/image
+include ../components/svg/svg
+
+include head/head
+
+block variables
+
+html(lang="ru-RU")
+	head
+		+head(data)
+		block head
+
+	body.d-flex.flex-column.h-100
+		.main-wrap.flex-shrink-0
+			include ../sections/header/header
+
+			block content
+
+		include ../sections/footer/footer
+
+		script(src="js/jquery.min.js")
+		script(src="js/app.js")
+		script(src="js/holder.js")
+
+

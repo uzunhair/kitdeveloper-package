@@ -5,11 +5,17 @@ import currentDate  from "../core/currentDate";
 const path = {
 	pug: {
 		src: [
-			"src/pug/*.pug",
-			"!src/pug/_example.pug",
+			"src/blocks/pages/**/*.pug",
+			"!src/blocks/pages/_example/_example.pug",
 			],
 		dist: "dist",
-		watch: "src/pug/**/*.*"
+		watch: "src/blocks/**/*.pug",
+	},
+	data: {
+		src: "src/blocks/**/*.json",
+		dist: "dist/data/",
+		watch: "src/blocks/**/*.json",
+		name: "data.json",
 	},
 	scripts: {
 		seperate: {
