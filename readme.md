@@ -13,12 +13,20 @@
 
 `src/blocks/components` - компоненты на подобии `card, alert`
 
+##### Структура страницы
+
 - pages
   - head
   - sections
     - modules
       - components
     - components
+    
+##### Содержимое блоков
+  - `.pug`
+  - `.scss`
+  - `.js`
+  - `.json`
   
 
 ## Стили
