@@ -1,6 +1,26 @@
 ## Установка
 
-`npm i`
+`npm install`
+
+## Bem
+`src/blocks` - папка bem
+
+`src/blocks/pages` - страницы
+
+`src/blocks/sections` - общие блоки страниц `header, footer, about` и тд.
+
+`src/blocks/modules` - блоки выводимые в `sections`
+
+`src/blocks/components` - компоненты на подобии `card, alert`
+
+- pages
+  - head
+  - sections
+    - modules
+      - components
+    - components
+  
+
 ## Стили
 - В `dev` режиме собриются 2 разных файла `theme.css` и `system.css`, это сделано чтобы не тратить 
 лвиную долю времени на компиляцию редко изменяемых библиотек.
