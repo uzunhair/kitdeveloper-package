@@ -10,6 +10,8 @@
   "scripts": {
     "start": "gulp",
     "production": "gulp production --production",
+    "lint:style": "stylelint \"src/**/*.scss\" --syntax=scss",
+    "lint:style --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
     "zip": "gulp zip"
   },
   "license": "MIT",
@@ -60,6 +62,9 @@
     "gulp-zip": "^5.0.0",
     "jquery.dotdotdot": "latest",
     "require-dir": "latest",
+    "stylelint": "^10.1.0",
+    "stylelint-order": "^3.0.1",
+    "stylelint-selector-bem-pattern": "^2.1.0",
     "vinyl-ftp": "latest",
     "yargs": "^13.2.4"
   },

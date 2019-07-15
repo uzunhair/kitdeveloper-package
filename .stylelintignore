@@ -1,0 +1,5 @@
+src/sass/vendors/**/*.scss
+src/ui/css/**/*.scss
+src/sass/theme/*.scss
+src/sass/config/*.scss
+src/sass/sprite/*.scss
