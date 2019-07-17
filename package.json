@@ -10,7 +10,7 @@
   "scripts": {
     "start": "gulp",
     "production": "gulp production --production",
-    "create:readlineSync": "node core/readlineSync.js",
+    "create:bem": "node core/createBemApi.js",
     "lint:style": "stylelint \"src/**/*.scss\" --syntax=scss",
     "lint:style --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
     "zip": "gulp zip"
