@@ -1,0 +1,14 @@
+require("./concat/bootstrap/alert");
+require("./concat/bootstrap/button");
+require("./concat/bootstrap/carousel");
+require("./concat/bootstrap/collapse");
+require("./concat/bootstrap/dropdown");
+require("./concat/bootstrap/index");
+require("./concat/bootstrap/modal");
+require("./concat/bootstrap/popover");
+require("./concat/bootstrap/scrollspy");
+require("./concat/bootstrap/tab");
+require("./concat/bootstrap/toast");
+require("./concat/bootstrap/tooltip");
+require("./concat/bootstrap/util");
+require("./setting");
