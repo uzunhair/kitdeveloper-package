@@ -29,8 +29,12 @@
   - `.json`
   
 #### Создание блоков
-bem create my-block
-bem create me-block -l folder/folder
+- `bem create my-block`
+- `bem create me-block -l folder/folder`
+
+или 
+
+`npm run create:bem`
 
 ## Задача 
 
@@ -39,9 +43,15 @@ bem create me-block -l folder/folder
 2 Нажимаем на задачу - 
 
 
-  
-
 ## Стили
 - В `dev` режиме собриются 2 разных файла `theme.css` и `system.css`, это сделано чтобы не тратить 
 лвиную долю времени на компиляцию редко изменяемых библиотек.
 - В `production` режиме все стили объединяются в один файл `app.css`
+
+## Скрипты
+
+Все сторонние большие библиотеки скриптов копируются из `node_modules` в минимизированном виде
+
+Свои скрипты и скрипты маленького размера подключаются 
+- в файле `js/entry.js`
+- или из папки `js/concat` и компилируется  `webpack`

@@ -71,6 +71,7 @@
     "stylelint-selector-bem-pattern": "^2.1.0",
     "uglifyjs-webpack-plugin": "^2.1.3",
     "vinyl-ftp": "latest",
+    "vinyl-named": "^1.1.0",
     "webpack": "^4.36.1",
     "webpack-stream": "^5.2.1",
     "yargs": "^13.2.4"
