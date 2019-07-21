@@ -1,6 +1,4 @@
-
-
-import currentDate from '../core/currentDate';
+import currentDate from '../core/current-date';
 
 const path = {
   pug: {

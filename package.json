@@ -10,7 +10,7 @@
   "scripts": {
     "start": "gulp",
     "production": "gulp production --production",
-    "create:bem": "node core/createBemApi.js",
+    "create:bem": "node core/create-bem-api.js",
     "lint:style": "stylelint \"src/**/*.scss\" --syntax=scss",
     "lint:style --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
     "lint:scripts": "./node_modules/.bin/eslint src/js/**/*.js gulpfile.babel.js core gulp",
@@ -29,7 +29,7 @@
     "browser-sync": "latest",
     "css-mqpacker": "latest",
     "del": "latest",
-    "eslint": "^5.3.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-no-loops": "^0.3.0",
@@ -87,6 +87,7 @@
   },
   "dependencies": {
     "bootstrap": "latest",
+    "eslint-plugin-unicorn": "^9.1.1",
     "font-awesome": "latest",
     "gulp.spritesmith": "latest",
     "holderjs": "latest",
