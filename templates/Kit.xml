@@ -1,0 +1,16 @@
+<templateSet group="Kit">
+  <template name="after" value="&amp;:after {&#10;  content: '';&#10;  $END$&#10;}" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="CSS" value="true" />
+    </context>
+  </template>
+  <template name="st" value="style={$END$} " description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="CoffeeScript" value="true" />
+      <option name="ECMAScript6" value="true" />
+      <option name="JSON" value="true" />
+      <option name="TypeScript" value="true" />
+      <option name="Vue" value="true" />
+    </context>
+  </template>
+</templateSet>

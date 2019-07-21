@@ -1,0 +1,6 @@
+<keymap version="1" name="Default copy" parent="$default">
+  <action id="EditorMoveToPageTop" />
+  <action id="PublishGroup.Upload">
+    <keyboard-shortcut first-keystroke="ctrl page_up" />
+  </action>
+</keymap>

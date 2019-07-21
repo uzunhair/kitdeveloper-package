@@ -1,0 +1,14 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="currentDate" type="JavaScript" />
+      <mapping pattern="i" type="Native" />
+      <mapping pattern="waw.svg" type="PLAIN_TEXT" />
+      <mapping pattern="footer-bg-gradient.svg" type="PLAIN_TEXT" />
+      <mapping pattern="start" type="PLAIN_TEXT" />
+      <mapping pattern="1212" type="PLAIN_TEXT" />
+      <mapping ext="otf" type="PLAIN_TEXT" />
+      <mapping ext="todo" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>
