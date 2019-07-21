@@ -1,11 +1,9 @@
-'use strict';
+
 
 import gulp from 'gulp';
-import {path}from './config.js';
 import del from 'del';
+import { path } from './config';
 
-gulp.task('clean', function () {
-	return del([
-		path.clean.dist
-	]);
-});
+gulp.task('clean', () => del([
+  path.clean.dist,
+]));

@@ -1,12 +1,10 @@
-'use strict';
+const { EOL } = require('os');
 
-const EOL = require('os').EOL;
-
-module.exports = function (entity, naming) {
-	return [
-		'.' + naming.stringify(entity) + ' {',
-		'    ',
-		'}',
-		''
-	].join(EOL);
+module.exports = function baseContent(entity, naming) {
+  return [
+    `.${naming.stringify(entity)} {`,
+    '    ',
+    '}',
+    '',
+  ].join(EOL);
 };

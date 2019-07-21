@@ -1,7 +1,4 @@
-'use strict';
-
 import gulp from 'gulp';
-import {path}from './config';
 import plumber from 'gulp-plumber';
 import data from 'gulp-data';
 import fs from 'fs';
@@ -16,56 +13,49 @@ import rename from 'gulp-rename';
 import cached from 'gulp-cached';
 import filter from 'gulp-filter';
 import debug from 'gulp-debug';
+import { path } from './config';
 
-const argv = yargs.argv;
+const { argv } = yargs;
 const production = !!argv.production;
 
-gulp.task('pug', function () {
-	return gulp.src(path.pug.src)
-		.pipe(plumber())
-		.pipe(data(function () {
-			return JSON.parse(fs.readFileSync(`${path.data.dist}${path.data.name}`, 'utf8'));
-		}))
-		.pipe(pug({
-			pretty: true
-		}))
-		.pipe(rename({dirname: '.'}))
-		.pipe(gulpif(production, replace('<link href="css/system.css" rel="stylesheet">', '')))
-		.pipe(gulpif(production, replace('theme.css', 'app.css')))
-		.pipe(gulpif(production, version({
-			append: {
-				key: 'v',
-				to: ['css', 'js']
-			}
-		})))
-		.pipe(duration('pug:build time'))
-		.pipe(gulp.dest(path.pug.dist))
-		.pipe(debug({title: 'Pug files'}))
-		.pipe(browsersync.stream());
-});
+gulp.task('pug', () => gulp.src(path.pug.src)
+  .pipe(plumber())
+  .pipe(data(() => JSON.parse(fs.readFileSync(`${path.data.dist}${path.data.name}`, 'utf8'))))
+  .pipe(pug({
+    pretty: true,
+  }))
+  .pipe(rename({ dirname: '.' }))
+  .pipe(gulpif(production, replace('<link href="css/system.css" rel="stylesheet">', '')))
+  .pipe(gulpif(production, replace('theme.css', 'app.css')))
+  .pipe(gulpif(production, version({
+    append: {
+      key: 'v',
+      to: ['css', 'js'],
+    },
+  })))
+  .pipe(duration('pug:build time'))
+  .pipe(gulp.dest(path.pug.dist))
+  .pipe(debug({ title: 'Pug files' }))
+  .pipe(browsersync.stream()));
 
-gulp.task('pug:cached', function () {
-	return gulp.src(path.pug.src)
-		.pipe(plumber())
-		.pipe(cached('pug'))
-		.pipe(filter(file => `/src/blocks/pages/${file.path}`))
-		.pipe(data(function () {
-			return JSON.parse(fs.readFileSync(`${path.data.dist}${path.data.name}`, 'utf8'));
-		}))
-		.pipe(pug({
-			pretty: true
-		}))
-		.pipe(rename({dirname: '.'}))
-		.pipe(gulpif(production, replace('<link href="css/system.css" rel="stylesheet">', '')))
-		.pipe(gulpif(production, replace('theme.css', 'app.css')))
-		.pipe(gulpif(production, version({
-			append: {
-				key: 'v',
-				to: ['css', 'js']
-			}
-		})))
-		.pipe(duration('pug:build time'))
-		.pipe(gulp.dest(path.pug.dist))
-		.pipe(debug({title: 'Pug cached files'}))
-		.pipe(browsersync.stream());
-});
+gulp.task('pug:cached', () => gulp.src(path.pug.src)
+  .pipe(plumber())
+  .pipe(cached('pug'))
+  .pipe(filter(file => `/src/blocks/pages/${file.path}`))
+  .pipe(data(() => JSON.parse(fs.readFileSync(`${path.data.dist}${path.data.name}`, 'utf8'))))
+  .pipe(pug({
+    pretty: true,
+  }))
+  .pipe(rename({ dirname: '.' }))
+  .pipe(gulpif(production, replace('<link href="css/system.css" rel="stylesheet">', '')))
+  .pipe(gulpif(production, replace('theme.css', 'app.css')))
+  .pipe(gulpif(production, version({
+    append: {
+      key: 'v',
+      to: ['css', 'js'],
+    },
+  })))
+  .pipe(duration('pug:build time'))
+  .pipe(gulp.dest(path.pug.dist))
+  .pipe(debug({ title: 'Pug cached files' }))
+  .pipe(browsersync.stream()));

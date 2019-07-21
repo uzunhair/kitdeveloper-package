@@ -1,12 +1,12 @@
 import $ from 'jquery';
 
-$(document).ready(function () {
-	$(function () {
-		// Запускаем инициализацию tooltip
-		$('[data-toggle="tooltip"]').tooltip();
-	});
+$(document).ready(() => {
+  $(() => {
+    // Запускаем инициализацию tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 
-	$(function () {
-		$('[data-toggle="popover"]').popover();
-	});
+  $(() => {
+    $('[data-toggle="popover"]').popover();
+  });
 });
