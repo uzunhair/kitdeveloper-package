@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-const gulp = require('gulp'),
-	{path} = require('./config.js');
+const gulp = require('gulp');
+const {path} = require('./config.js');
 
 gulp.task('watch', function () {
 	gulp.watch(path.pug.watch, {usePolling: true}, gulp.series('pug'));

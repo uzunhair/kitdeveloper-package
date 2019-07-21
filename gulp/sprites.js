@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-import gulp from "gulp";
-import { path } from "./config.js";
-import plumber from "gulp-plumber";
-import debug from "gulp-debug";
-import svgmin from "gulp-svgmin";
-import cheerio from "gulp-cheerio";
-import svgSprite from "gulp-svg-sprite";
-import replace from "gulp-replace";
+import gulp from 'gulp';
+import {path}from './config.js';
+import plumber from 'gulp-plumber';
+import debug from 'gulp-debug';
+import svgmin from 'gulp-svgmin';
+import cheerio from 'gulp-cheerio';
+import svgSprite from 'gulp-svg-sprite';
+import replace from 'gulp-replace';
 
 gulp.task('sprites', function (cb) {
 	gulp.src(path.sprites.src)
@@ -21,27 +21,27 @@ gulp.task('sprites', function (cb) {
 			}
 		}))
 		.pipe(cheerio({
-			run: function ($, file) {
+			run($) {
 				$('svg *').each(function () {
 					const svg = $(this);
-					const stroke = svg.attr('stroke'),
-						stroke_width = svg.attr('stroke-width'),
-						data_width = svg.attr('data-width'),
-						fill = svg.attr('fill');
+					const stroke = svg.attr('stroke');
+					const strokeWidth = svg.attr('stroke-width');
+					const dataWidth = svg.attr('data-width');
+					const fill = svg.attr('fill');
 
-					if (typeof stroke !== typeof undefined && stroke !== 'none') {
+					if (typeof stroke !== 'undefined' && stroke !== 'none') {
 						svg.removeAttr('stroke');
 						svg.attr('data-stroke', 'true');
-						if (typeof data_width !== typeof undefined) {
-							svg.attr('data-width', stroke_width);
+						if (typeof dataWidth !== 'undefined') {
+							svg.attr('data-width', strokeWidth);
 						}
 					}
 
-					if (typeof fill !== typeof undefined && fill !== 'none') {
+					if (typeof fill !== 'undefined' && fill !== 'none') {
 						svg.removeAttr('fill');
 						svg.attr('data-fill', 'true');
 
-					} else {
+					}else {
 						svg.attr('data-fill-none', 'none');
 					}
 
@@ -56,7 +56,7 @@ gulp.task('sprites', function (cb) {
 		.pipe(svgSprite({
 			mode: {
 				symbol: {
-					sprite: "../sprite.svg",
+					sprite: '../sprite.svg',
 					svg: {
 						xmlDeclaration: false,
 						doctypeDeclaration: false
@@ -64,7 +64,7 @@ gulp.task('sprites', function (cb) {
 					render: {
 						scss: {
 							dest: '../../../sass/sprite/_sprite.scss',
-							template: "src/sass/sprite/_svg_sprite_template.scss"
+							template: 'src/sass/sprite/_svg_sprite_template.scss'
 						}
 					}
 				}

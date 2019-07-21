@@ -1,22 +1,21 @@
-"use strict";
+'use strict';
 
-import gulp from "gulp";
-import { path } from "./config.js";
-import changed from "gulp-changed";
-import plumber from "gulp-plumber";
-import yargs from "yargs";
-import gulpif from "gulp-if";
-import replace from "gulp-replace";
+import gulp from 'gulp';
+import {path}from './config.js';
+import changed from 'gulp-changed';
+import plumber from 'gulp-plumber';
+import yargs from 'yargs';
+import gulpif from 'gulp-if';
 
-const argv = yargs.argv,
-	production = !!argv.production;
+const argv = yargs.argv;
+const production = !!argv.production;
 
 gulp.task('images', function (cb) {
-	const imagemin = require('gulp-imagemin'),
-		imageminGifsicle = require('imagemin-gifsicle'),
-		imageminJpegtran = require('imagemin-jpegtran'),
-		imageminOptipng = require('imagemin-optipng');
-	//imageminSvgo = require('imagemin-svgo');
+	const imagemin = require('gulp-imagemin');
+	const imageminGifsicle = require('imagemin-gifsicle');
+	const imageminJpegtran = require('imagemin-jpegtran');
+	const imageminOptipng = require('imagemin-optipng');
+	// imageminSvgo = require('imagemin-svgo');
 
 	gulp.src(path.images.src)
 		.pipe(changed(path.images.dist))
@@ -40,8 +39,8 @@ gulp.task('sprite', function (cb) {
 				imgName: '../img/sprite.png',
 				cssName: '_sprite.scss',
 				cssFormat: 'scss',
-				algorithm: 'binary-tree',
-				//cssTemplate: 'stylus.template.mustache',
+				algorithm: 'binary-tree'
+				// cssTemplate: 'stylus.template.mustache',
 				// cssVarMap: function(sprite) {
 				//     sprite.name = 's-' + sprite.name
 				// }

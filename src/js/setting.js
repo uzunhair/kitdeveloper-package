@@ -1,10 +1,12 @@
-$(document).ready(function () {
-    $(function () {
-        // Запускаем инициализацию tooltip
-        $('[data-toggle="tooltip"]').tooltip()
-    });
+import $ from 'jquery';
 
-    $(function () {
-        $('[data-toggle="popover"]').popover()
-    })
+$(document).ready(function () {
+	$(function () {
+		// Запускаем инициализацию tooltip
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+
+	$(function () {
+		$('[data-toggle="popover"]').popover();
+	});
 });

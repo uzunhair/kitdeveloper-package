@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
-import gulp from "gulp";
-import { path } from "./config.js";
-import plumber from "gulp-plumber";
-//import yargs from "yargs";
-import webpackStream from "webpack-stream";
-import named from "vinyl-named";
-import UglifyJsPlugin from "uglifyjs-webpack-plugin";
+import gulp from 'gulp';
+import {path}from './config.js';
+import plumber from 'gulp-plumber';
+// import yargs from "yargs";
+import webpackStream from 'webpack-stream';
+import named from 'vinyl-named';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 // const argv = yargs.argv,
 // 	production = !!argv.production;
@@ -25,7 +25,7 @@ gulp.task('scripts', function (cb) {
 		.pipe(webpackStream({
 			mode: 'production',
 			output: {
-				filename: '[name].js',
+				filename: '[name].js'
 			},
 			module: {
 				rules: [
@@ -44,10 +44,10 @@ gulp.task('scripts', function (cb) {
 					new UglifyJsPlugin({
 						uglifyOptions: {
 							warnings: false,
-							output: null,
-						},
-					}),
-				],
+							output: null
+						}
+					})
+				]
 			},
 			externals: {
 				jquery: 'jQuery'
