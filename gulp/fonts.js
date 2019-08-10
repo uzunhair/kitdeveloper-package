@@ -1,5 +1,3 @@
-
-
 import gulp from 'gulp';
 import { path } from './config';
 

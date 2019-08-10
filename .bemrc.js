@@ -11,7 +11,10 @@ module.exports = {
 							default: true
 						},
 						"src/blocks/sections": {
-							techs: ["pug"],
+							techs: ["pug", "scss"],
+						},
+						"src/blocks/pages": {
+							techs: ["pug", "json", "scss"],
 						}
 					}
 				}

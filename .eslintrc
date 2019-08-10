@@ -32,9 +32,7 @@
         "allowTernary": true,
         "sonarjs/cognitive-complexity": ["error", 30],
         "no-loops/no-loops": 2,
-
         "linebreak-style": 0,
-
         "unicorn/catch-error-name": "error",
         "unicorn/custom-error-definition": "off",
         "unicorn/error-message": "error",

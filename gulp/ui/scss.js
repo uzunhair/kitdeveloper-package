@@ -8,7 +8,6 @@ gulp.task('uiScss:build', (cb) => {
     .pipe(plugin.sass().on('error', plugin.sass.logError))
     .pipe(plugin.sassUnicode())
     .pipe(plugin.autoprefixer({
-      browsers: ['last 2 versions'],
       cascade: false,
     }))
     .pipe(plugin.pxtorem())

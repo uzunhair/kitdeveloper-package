@@ -15,7 +15,7 @@ const spritesmith = require('gulp.spritesmith');
 // imageminSvgo = require('imagemin-svgo');
 /* eslint-enable global-require */
 
-const { argv } = yargs.argv;
+const { argv } = yargs;
 const production = !!argv.production;
 
 gulp.task('images', (cb) => {

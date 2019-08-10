@@ -5,9 +5,16 @@
 @import "theme/fluid-font-size";
 
 @import "theme/typografy";
-@import "theme/gui";
+
 @import "theme/layout";
 @import "theme/bootstrap";
 @import "theme/page";
 @import "theme/widget";
 @import "sprite/sprite";
+
+
+@import "../blocks/pages/pages";
+@import "../blocks/components/components";
+@import "../blocks/sections/sections";
+
+@import "theme/gui";

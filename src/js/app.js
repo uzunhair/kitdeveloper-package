@@ -14,7 +14,9 @@ require('../../node_modules/bootstrap/js/dist/tooltip');
 require('../../node_modules/bootstrap/js/dist/popover');
 
 // Bem
-require('../blocks/components/_components');
-require('../blocks/modules/_modules');
+// require('../blocks/components/_components');
+// require('../blocks/modules/_modules');
+// require('../blocks/sections/_sections');
+// require('../blocks/pages/_pages');
 
 require('./setting');

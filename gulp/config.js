@@ -3,11 +3,12 @@ import currentDate from '../core/current-date';
 const path = {
   pug: {
     src: [
-      'src/blocks/pages/**/*.pug',
+      'src/blocks/pages/*/*.pug',
       '!src/blocks/pages/_example/_example.pug',
     ],
     dist: 'dist',
-    watch: 'src/blocks/**/*.pug',
+    watch: ['!src/blocks/pages/**/*.pug', 'src/blocks/**/*.pug'],
+    wathchPages: 'src/blocks/pages/**/*.pug',
   },
   data: {
     src: 'src/blocks/**/*.json',
@@ -38,8 +39,11 @@ const path = {
     theme: {
       src: 'src/sass/theme.scss',
       watch: [
+        'src/blocks/**/*.scss',
+        'src/blocks/**/**/*.scss',
         'src/sass/theme.scss',
         'src/sass/theme/**/*.scss',
+        'src/sass/sprite/*.scss',
         'src/sass/config/*.scss',
       ],
     },
@@ -77,12 +81,12 @@ const path = {
   sprites: {
     src: 'src/img/svg-icon/*.svg',
     dist: 'src/img/svg/',
-    watch: 'src/fonts/**/*.*',
+    watch: 'src/img/svg-icon/*.svg',
   },
   fonts: {
     src: 'src/fonts/**/*.*',
     dist: 'dist/fonts',
-    watch: 'src/img/svg-icon/*.svg',
+    watch: 'src/fonts/*.*',
   },
   clean: {
     dist: 'dist',
