@@ -29,7 +29,7 @@
                 "packageDir": "./"
             }
         ],
-        "allowTernary": true,
+        "allowTernary": 0,
         "sonarjs/cognitive-complexity": ["error", 30],
         "no-loops/no-loops": 2,
         "linebreak-style": 0,

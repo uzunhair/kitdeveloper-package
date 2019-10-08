@@ -12,6 +12,7 @@ require('../../node_modules/bootstrap/js/dist/scrollspy');
 require('../../node_modules/bootstrap/js/dist/tab');
 require('../../node_modules/bootstrap/js/dist/tooltip');
 require('../../node_modules/bootstrap/js/dist/popover');
+require('../../node_modules/bootstrap/js/dist/toast');
 
 // Bem
 // require('../blocks/components/_components');

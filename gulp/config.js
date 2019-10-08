@@ -33,6 +33,7 @@ const path = {
     watch: [
       'src/js/**/*.js',
       'src/blocks/**/*.js',
+      'src/blocks/**/**/*.js',
     ],
   },
   styles: {

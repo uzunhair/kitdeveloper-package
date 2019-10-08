@@ -11,11 +11,11 @@ block variables
 
 html(lang="ru-RU")
 	head
-		+head(data)
+		+head()
 		block head
 
-	body.d-flex.flex-column.h-100
-		.main-wrap.flex-shrink-0
+	body.layout
+		.layout-wrapper
 			include ../sections/header/header
 
 			block content
