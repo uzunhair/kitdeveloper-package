@@ -1,7 +1,6 @@
 const { EOL } = require('os');
 
 module.exports = function baseContent(entity, naming) {
-
   const fileName = naming.stringify(entity);
   const pageName = fileName[0].toUpperCase() + fileName.substring(1);
 
@@ -14,6 +13,6 @@ module.exports = function baseContent(entity, naming) {
     'block head',
     '',
     'block content',
-    `    h3 ${pageName}`
+    `    h3 ${pageName}`,
   ].join(EOL);
 };
