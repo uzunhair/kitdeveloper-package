@@ -27,7 +27,6 @@ module.exports = {
         'node_modules/bootstrap/js/dist/tooltip.js',
         'node_modules/bootstrap/js/dist/popover.js',
         'node_modules/owl.carousel/dist/owl.carousel.js',
-        'node_modules/jquery.dotdotdot/dist/jquery.dotdotdot.js',
         'src/js/concat/*.js',
         'src/js/setting.js'],
       styleTheme: 'src/sass/theme.scss',

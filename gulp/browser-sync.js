@@ -1,5 +1,3 @@
-
-
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import { path } from './config';

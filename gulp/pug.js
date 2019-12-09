@@ -41,7 +41,7 @@ gulp.task('pug', () => gulp.src(path.pug.src)
 gulp.task('pug:cached', () => gulp.src(path.pug.src)
   .pipe(plumber())
   .pipe(cached('pug'))
-  .pipe(filter(file => `/src/blocks/pages/${file.path}`))
+  .pipe(filter((file) => `/src/blocks/pages/${file.path}`))
   .pipe(data(() => JSON.parse(fs.readFileSync(`${path.data.dist}${path.data.name}`, 'utf8'))))
   .pipe(pug({
     pretty: true,

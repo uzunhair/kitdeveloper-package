@@ -1,5 +1,3 @@
-
-
 import gulp from 'gulp';
 import favicons from 'gulp-favicons';
 import debug from 'gulp-debug';

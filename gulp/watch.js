@@ -1,5 +1,3 @@
-
-
 const gulp = require('gulp');
 const { path } = require('./config');
 
