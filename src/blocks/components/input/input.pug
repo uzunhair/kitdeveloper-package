@@ -1,0 +1,13 @@
+//-+input()(label="Label" id="id" placeholder="placeholder")
+mixin input()
+	.form-group
+		label(for=attributes.id)=attributes.label
+		input.form-control(
+			type=attributes.type ? `${attributes.type}`: 'text',
+			id=attributes.id
+			placeholder=attributes.placeholder
+			autocomplete="off"
+		)
+
+		if (attributes.help)
+			small.form-text.text-muted=attributes.help
