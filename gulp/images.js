@@ -9,7 +9,7 @@ import { path } from './config';
 /* eslint-disable import/no-extraneous-dependencies */
 const imagemin = require('gulp-imagemin');
 const imageminGifsicle = require('imagemin-gifsicle');
-const imageminJpegtran = require('imagemin-jpegtran');
+// const imageminJpegtran = require('imagemin-jpegtran');
 const imageminOptipng = require('imagemin-optipng');
 const spritesmith = require('gulp.spritesmith');
 // imageminSvgo = require('imagemin-svgo');
@@ -24,7 +24,7 @@ gulp.task('images', (cb) => {
     .pipe(plumber())
     .pipe(gulpif(production, imagemin([
       imageminGifsicle({ interlaced: true }),
-      imageminJpegtran({ progressive: true }),
+      // imageminJpegtran({ progressive: true }),
       imageminOptipng({ optimizationLevel: 5 }),
       // imageminSvgo({plugins: [{removeViewBox: true}]})
     ])))

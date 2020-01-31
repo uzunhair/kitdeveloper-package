@@ -7,43 +7,7 @@
 // Deprecate
 @import "vendors/bootstrap/mixins/deprecate";
 
-// Mixins Utilities
-@import "vendors/bootstrap/mixins/breakpoints";
-@import "vendors/bootstrap/mixins/hover";
-@import "vendors/bootstrap/mixins/image";
-@import "vendors/bootstrap/mixins/badge";
-@import "vendors/bootstrap/mixins/resize";
-@import "vendors/bootstrap/mixins/screen-reader";
-@import "vendors/bootstrap/mixins/size";
-@import "vendors/bootstrap/mixins/reset-text";
-@import "vendors/bootstrap/mixins/text-emphasis";
-@import "vendors/bootstrap/mixins/text-hide";
-@import "vendors/bootstrap/mixins/text-truncate";
-@import "vendors/bootstrap/mixins/visibility";
-
-// Mixins Components
-@import "vendors/bootstrap/mixins/alert";
-@import "vendors/bootstrap/mixins/buttons";
-@import "vendors/bootstrap/mixins/caret";
-@import "vendors/bootstrap/mixins/pagination";
-@import "vendors/bootstrap/mixins/lists";
-@import "vendors/bootstrap/mixins/list-group";
-@import "vendors/bootstrap/mixins/nav-divider";
-@import "vendors/bootstrap/mixins/forms";
-@import "vendors/bootstrap/mixins/table-row";
-
-// Mixins Skins
-@import "vendors/bootstrap/mixins/background-variant";
-@import "vendors/bootstrap/mixins/border-radius";
-@import "vendors/bootstrap/mixins/box-shadow";
-@import "vendors/bootstrap/mixins/gradients";
-@import "vendors/bootstrap/mixins/transition";
-
-// Mixins Layout
-//@import "vendors/bootstrap/mixins/clearfix";
-@import "vendors/bootstrap/mixins/grid-framework";
-@import "vendors/bootstrap/mixins/grid";
-//@import "vendors/bootstrap/mixins/float";
+@import "vendors/bootstrap/mixins";
 
 //@import "vendors/bootstrap/root";
 @import "vendors/bootstrap/reboot";
@@ -60,13 +24,13 @@
 //@import "vendors/bootstrap/input-group";
 //@import "vendors/bootstrap/custom-forms";
 //@import "vendors/bootstrap/nav";
-//@import "navbar";
+//@import "vendors/bootstrap/navbar";
 //@import "vendors/bootstrap/card";
 //@import "vendors/bootstrap/breadcrumb";
 //@import "vendors/bootstrap/pagination";
-//@import "badge";
+//@import "vendors/bootstrap/badge";
 //@import "vendors/bootstrap/alert";
-//@import "progress";
+//@import "vendors/bootstrap/progress";
 //@import "vendors/bootstrap/media";
 //@import "vendors/bootstrap/list-group";
 //@import "vendors/bootstrap/close";
@@ -74,7 +38,7 @@
 //@import "vendors/bootstrap/modal";
 //@import "vendors/bootstrap/tooltip";
 //@import "vendors/bootstrap/popover";
-//@import "carousel";
+//@import "vendors/bootstrap/carousel";
 //@import "vendors/bootstrap/print";
 //@import "vendors/bootstrap/spinners";
 
