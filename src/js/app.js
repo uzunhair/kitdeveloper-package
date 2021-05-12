@@ -1,18 +1,18 @@
 // Bootstrap
 
-require('../../node_modules/popper.js/dist/umd/popper.min');
-require('../../node_modules/bootstrap/js/dist/util');
-require('../../node_modules/bootstrap/js/dist/alert');
-require('../../node_modules/bootstrap/js/dist/button');
-require('../../node_modules/bootstrap/js/dist/carousel');
-require('../../node_modules/bootstrap/js/dist/collapse');
-require('../../node_modules/bootstrap/js/dist/dropdown');
-require('../../node_modules/bootstrap/js/dist/modal');
-require('../../node_modules/bootstrap/js/dist/scrollspy');
-require('../../node_modules/bootstrap/js/dist/tab');
-require('../../node_modules/bootstrap/js/dist/tooltip');
-require('../../node_modules/bootstrap/js/dist/popover');
-require('../../node_modules/bootstrap/js/dist/toast');
+// import Alert from 'bootstrap/js/dist/alert';
+// import Button from 'bootstrap/js/dist/button';
+// import Carousel from 'bootstrap/js/dist/carousel';
+// import Collapse from 'bootstrap/js/dist/collapse';
+// import Dropdown from 'bootstrap/js/dist/dropdown';
+// import Modal from 'bootstrap/js/dist/modal';
+// import Scrollspy from 'bootstrap/js/dist/scrollspy';
+// import Tab from 'bootstrap/js/dist/tab';
+// import Tooltip from 'bootstrap/js/dist/tooltip';
+// import Popover from 'bootstrap/js/dist/popover';
+// import Toast from 'bootstrap/js/dist/toast';
+
+// import { Alert, Button, Carousel, Collapse, Dropdown, Modal, Scrollspy, Tab, Tooltip, Popover, Toast } from 'bootstrap';
 
 // Bem
 // require('../blocks/components/_components');
