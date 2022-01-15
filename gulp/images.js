@@ -5,15 +5,13 @@ import yargs from 'yargs';
 import gulpif from 'gulp-if';
 import { path } from './config';
 
-/* eslint-disable global-require */
-/* eslint-disable import/no-extraneous-dependencies */
-const imagemin = require('gulp-imagemin');
+import imagemin from 'gulp-imagemin';
+
 const imageminGifsicle = require('imagemin-gifsicle');
 // const imageminJpegtran = require('imagemin-jpegtran');
 const imageminOptipng = require('imagemin-optipng');
 const spritesmith = require('gulp.spritesmith');
-// imageminSvgo = require('imagemin-svgo');
-/* eslint-enable global-require */
+const imageminSvgo = require('imagemin-svgo');
 
 const { argv } = yargs;
 const production = !!argv.production;
