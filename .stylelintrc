@@ -189,7 +189,7 @@
             "numeric",
             {
                 "message": "Необходимо указывать плотность шрифта цифрой",
-                ignore: [
+                "ignore": [
                     "relative"
                 ]
             }
