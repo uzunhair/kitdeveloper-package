@@ -5,7 +5,7 @@ import yargs from 'yargs';
 import gulpif from 'gulp-if';
 import { path } from './config';
 
-import imagemin from 'gulp-imagemin';
+const imagemin = require('gulp-imagemin');
 
 const imageminGifsicle = require('imagemin-gifsicle');
 // const imageminJpegtran = require('imagemin-jpegtran');

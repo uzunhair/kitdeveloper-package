@@ -3,7 +3,6 @@ import plumber from 'gulp-plumber';
 // import yargs from "yargs";
 import webpackStream from 'webpack-stream';
 import named from 'vinyl-named';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import { path } from './config';
 
 // const argv = yargs.argv,
@@ -30,22 +29,17 @@ gulp.task('scripts', (cb) => {
           {
             test: /\.(js)$/,
             exclude: /(node_modules)/,
-            loader: 'babel-loader',
-            query: {
-              presets: ['@babel/preset-env'],
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env']
+              }
             },
           },
         ],
       },
       optimization: {
-        minimizer: [
-          new UglifyJsPlugin({
-            uglifyOptions: {
-              warnings: false,
-              output: null,
-            },
-          }),
-        ],
+        minimize: true,
       },
       externals: {
         jquery: 'jQuery',
