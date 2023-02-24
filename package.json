@@ -77,13 +77,10 @@
     "yargs": "^17.3.1"
   },
   "dependencies": {
-    "bootstrap": "^5.2.0-beta1",
-    "enquire.js": "^2.1.6",
+    "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
     "gulp.spritesmith": "^6.12.1",
-    "holderjs": "^2.9.9",
-    "jquery": "^3.6.0",
-    "theia-sticky-sidebar": "^1.7.0"
+    "holderjs": "^2.9.9"
   },
   "keywords": [
     "freelance"
