@@ -19,7 +19,6 @@ const path = {
   scripts: {
     seperate: {
       src: [
-        'node_modules/jquery/dist/jquery.min.js',
         'node_modules/holderjs/holder.js',
       ],
     },
