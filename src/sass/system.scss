@@ -50,7 +50,7 @@
 //@import "vendors/bootstrap/helpers/stretched-link";
 //@import "vendors/bootstrap/helpers/text-truncation";
 
-$utilities: map-get-multiple($utilities, (
+$utilities: map-get-multiple($utilities (
   //"display",
   //"order",
   //"flex",
@@ -89,4 +89,3 @@ $utilities: map-get-multiple($utilities, (
 
 // compile fontawesome
 //@import 'vendors/font-awesome/font-awesome';
-
