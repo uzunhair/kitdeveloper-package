@@ -1,0 +1,8 @@
+mixin dropdownToggle(text, className="btn-secondary")
+    button.btn.dropdown-toggle(
+            type='button'
+            class=className
+            data-bs-toggle='dropdown'
+            aria-expanded='false'
+            data-bs-offset="0,10"
+        )&attributes(attributes)=text

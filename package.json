@@ -70,7 +70,7 @@
     "require-dir": "^1.2.0",
     "sass": "^1.51.0",
     "stylelint": "^13.13.1",
-    "stylelint-order": "^5.0.0",
+    "stylelint-order": "^4.0.0",
     "stylelint-selector-bem-pattern": "^2.1.1",
     "vinyl-named": "^1.1.0",
     "webpack": "^5.72.1",
@@ -80,8 +80,7 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
-    "gulp.spritesmith": "^6.12.1",
-    "holderjs": "^2.9.9"
+    "gulp.spritesmith": "^6.12.1"
   },
   "keywords": [
     "freelance"

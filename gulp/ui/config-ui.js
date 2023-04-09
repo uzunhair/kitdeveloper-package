@@ -1,7 +1,6 @@
 module.exports = {
   path: {
     build: {
-      html: 'dist/',
       pug: 'dist/',
       js: 'dist/js/',
       style: 'dist/css/',
@@ -10,9 +9,8 @@ module.exports = {
       fonts: 'dist/fonts/',
     },
     src: {
-      html: 'src/html/*.html',
       pug: 'src/pug/*.pug',
-      jsSeparate: ['src/js/separate/*.js', 'node_modules/holderjs/holder.js'],
+      jsSeparate: ['src/js/separate/*.js'],
       jsConcat: [
         'node_modules/popper.js/dist/umd/popper.min.js',
         'node_modules/bootstrap/js/dist/util.js',
@@ -29,23 +27,21 @@ module.exports = {
         'node_modules/owl.carousel/dist/owl.carousel.js',
         'src/js/concat/*.js',
         'src/js/setting.js'],
-      styleTheme: 'src/sass/theme.scss',
-      styleVendors: 'src/sass/system.scss',
+      styleTheme: 'src/scss/theme.scss',
+      styleVendors: 'src/scss/system.scss',
       img: 'src/img/**/*.+(jpg|jpeg|png)',
       svg: 'src/img/svg-sprite/*.*',
       fonts: 'src/fonts/**/*.*',
     },
     watch: {
-      html: 'src/**/*.html',
       pug: 'src/pug/**/*.*',
       js: 'src/js/**/*.js',
-      styleTheme: ['src/sass/theme.scss', 'src/sass/theme/**/*.scss', 'src/sass/config/*.scss'],
-      styleVendors: ['src/sass/system.scss', 'src/sass/vendors/**/*.scss', 'src/sass/config/*.scss'],
+      styleTheme: ['src/scss/theme.scss', 'src/scss/theme/**/*.scss', 'src/scss/config/*.scss'],
+      styleVendors: ['src/scss/system.scss', 'src/scss/vendors/**/*.scss', 'src/scss/config/*.scss'],
       img: 'src/img/**/*.*',
       fonts: 'src/fonts/**/*.*',
     },
     browser: {
-      html: 'dist/**/*.html',
       pug: 'dist/**/*.pug',
       js: 'dist/js/**/*.js',
       style: 'dist/css/**/*.*',
@@ -53,11 +49,10 @@ module.exports = {
       fonts: 'dist/fonts/**/*.*',
     },
     clean: {
-      html: 'dist/*.html',
       js: 'dist/js/',
       style: 'dist/css/',
       img: 'dist/img/',
-      svg: 'src/sass/sprite/_sprite.scss',
+      svg: 'src/scss/sprite/_sprite.scss',
       fonts: 'dist/fonts/',
 
     },

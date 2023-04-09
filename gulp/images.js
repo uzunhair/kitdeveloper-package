@@ -41,6 +41,6 @@ gulp.task('sprite', (cb) => {
     }));
 
   spriteData.img.pipe(gulp.dest('./src/img/')); // путь, куда сохраняем картинку
-  spriteData.css.pipe(gulp.dest('./src/sass/sprite/')); // путь, куда сохраняем стили
+  spriteData.css.pipe(gulp.dest('./src/scss/sprite/')); // путь, куда сохраняем стили
   cb();
 });

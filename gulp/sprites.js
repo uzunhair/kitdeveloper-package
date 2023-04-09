@@ -60,8 +60,8 @@ gulp.task('sprites', (cb) => {
           },
           render: {
             scss: {
-              dest: '../../../sass/sprite/_sprite.scss',
-              template: 'src/sass/sprite/_svg-sprite-template.scss',
+              dest: '../../../scss/sprite/_sprite.scss',
+              template: 'src/scss/sprite/_svg-sprite-template.scss',
             },
           },
         },

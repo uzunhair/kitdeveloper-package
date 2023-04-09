@@ -15,7 +15,7 @@ gulp.task('default', (cb) => {
       'styles:theme',
       'pug',
       'scripts',
-      'scripts:vendors',
+      //'scripts:vendors',
       'fonts',
       'images',
       'sprites',

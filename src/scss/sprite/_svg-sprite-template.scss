@@ -12,9 +12,9 @@
 [data-fill="true"] {
   fill: currentColor;
 }
-
+/* stylelint-disable-line */
 {{#shapes}}
 .icon-{{base}} {
-  width:({{width.inner}}/{{height.inner}})*1em;
+  width:(calc({{width.inner}}/{{height.inner}}))*1em;
 }
 {{/shapes}}

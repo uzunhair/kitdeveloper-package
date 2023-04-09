@@ -6,11 +6,11 @@ import debug from 'gulp-debug';
 
 const vendorList = {
   bootstrap: {
-    './node_modules/bootstrap/scss/**': './src/sass/vendors/bootstrap',
+    './node_modules/bootstrap/scss/**': './src/scss/vendors/bootstrap',
   },
   fontAwesome: {
     './node_modules/font-awesome/fonts/*.*': './src/fonts/',
-    './node_modules/font-awesome/scss/*.*': './src/sass/vendors/font-awesome/',
+    './node_modules/font-awesome/scss/*.*': './src/scss/vendors/font-awesome/',
   },
 };
 

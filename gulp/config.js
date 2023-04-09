@@ -18,9 +18,7 @@ const path = {
   },
   scripts: {
     seperate: {
-      src: [
-        'node_modules/holderjs/holder.js',
-      ],
+      src: '',
     },
     concat: {
       src: [
@@ -37,26 +35,26 @@ const path = {
   },
   styles: {
     theme: {
-      src: 'src/sass/theme.scss',
+      src: 'src/scss/theme.scss',
       watch: [
         'src/blocks/**/*.scss',
         'src/blocks/**/**/*.scss',
-        'src/sass/theme.scss',
-        'src/sass/theme/**/*.scss',
-        'src/sass/sprite/*.scss',
-        'src/sass/config/*.scss',
+        'src/scss/theme.scss',
+        'src/scss/theme/**/*.scss',
+        'src/scss/sprite/*.scss',
+        'src/scss/config/*.scss',
       ],
     },
     vendors: {
-      src: 'src/sass/system.scss',
+      src: 'src/scss/system.scss',
       watch: [
-        'src/sass/system.scss',
-        'src/sass/vendors/**/*.scss',
-        'src/sass/config/*.scss',
+        'src/scss/system.scss',
+        'src/scss/vendors/**/*.scss',
+        'src/scss/config/*.scss',
       ],
     },
     production: {
-      src: 'src/sass/app.scss',
+      src: 'src/scss/app.scss',
     },
     dist: 'dist/css',
 
