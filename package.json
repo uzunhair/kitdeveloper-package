@@ -11,6 +11,7 @@
     "start": "gulp",
     "production": "gulp production --production",
     "create:bem": "node core/create-bem-api.js",
+    "create:pages-list": "node core/page-list.js",
     "lint:style": "stylelint \"src/**/*.scss\" --syntax=scss",
     "lint:style --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix",
     "lint:scripts": "./node_modules/.bin/eslint src/js/**/*.js gulpfile.babel.js core gulp",
